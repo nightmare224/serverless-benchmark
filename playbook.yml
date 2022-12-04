@@ -76,4 +76,28 @@
   roles:
     - { role: kill-resource-metrics, appName: matrix-multiplication-low }
   tags: matrix-multiplication-low
+
+- name: Deploy openfaas application
+  hosts: cloudmaster
+  roles:
+    - { role: deploy-openfaas-app, appName: fast-fourier-transform }
+  tags: fast-fourier-transform
+
+- name: Start openfaas application resource metrics
+  hosts: cloudworker
+  roles:
+    - { role: resource-metrics, appName: fast-fourier-transform }
+  tags: fast-fourier-transform
+
+- name: Trigger openfaas application
+  hosts: cloudmaster
+  roles:
+    - { role: trigger-openfaas-app, appName: fast-fourier-transform }
+  tags: fast-fourier-transform
+
+- name: Kill the resource metrics script
+  hosts: cloudworker
+  roles:
+    - { role: kill-resource-metrics, appName: fast-fourier-transform }
+  tags: fast-fourier-transform
 # ps aux | grep collect-metrics.sh | grep /bin/sh | awk '{print $2}' | xargs kill -9

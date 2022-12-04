@@ -33,3 +33,11 @@ functions:
         read_timeout: "5m5s"
         write_timeout: "5m5s"
         exec_timeout: "5m5s"
+  fast-fourier-transform:
+    lang: python3-debian
+    handler: ./fast-fourier-transform
+    image: nightmare224/fast-fourier-transform:latest
+    environment:
+        read_timeout: "5m5s"
+        write_timeout: "5m5s"
+        exec_timeout: "5m5s"
