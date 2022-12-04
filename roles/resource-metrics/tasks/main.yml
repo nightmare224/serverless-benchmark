@@ -1,0 +1,26 @@
+---
+- name: Install ts
+  become: yes
+  apt:
+    update_cache: yes
+    name: moreutils
+
+- name: Transfer script
+  copy:
+    src: "{{ role_path }}/files/collect-metrics.sh"
+    dest: /home/{{ ansible_user }}/
+
+- name: Change file permissions
+  become: yes
+  file: 
+    path: /home/{{ ansible_user }}/{{ item }}
+    mode: '0755'
+  loop:
+    - collect-metrics.sh
+
+- name: Run script
+  shell: /home/{{ ansible_user }}/collect-metrics.sh {{ appName }} {{ appName }}
+  async: 120
+  poll: 30
+
+  

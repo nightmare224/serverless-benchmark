@@ -1,0 +1,23 @@
+---
+- name: Transfer application to master
+  synchronize:
+    src: "{{ role_path }}/files/app"
+    dest: /home/{{ ansible_user }}/
+
+- name: Remove old openfaas application
+  command: faas-cli remove {{ appName }}
+  ignore_errors: true
+  failed_when: false
+
+- name: Pause 1 minutes wait for remove
+  ansible.builtin.pause:
+    minutes: 1
+
+- name: Deploy openfaas application
+  shell: |
+    cd /home/{{ ansible_user }}/app
+    faas-cli up -f stack.yml --filter {{ appName }}
+
+- name: Wait openfaas appliaction up
+  command: curl http://127.0.0.1:8080/function/{{ appName }}
+  # command: kubectl wait -n openfaas-fn -l faas_function={{ appName }} --all pod --for=condition=Ready --timeout=300s

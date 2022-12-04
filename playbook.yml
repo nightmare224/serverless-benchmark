@@ -1,0 +1,79 @@
+---
+- name: Install requirement packet and login
+  hosts: cloudmaster
+  roles:
+    - { role: env-init }
+  tags: init
+
+- name: Deploy openfaas application
+  hosts: cloudmaster
+  roles:
+    - { role: deploy-openfaas-app, appName: floating-point-operation-sine }
+  tags: floating-point-operation-sine
+
+- name: Start openfaas application resource metrics
+  hosts: cloudworker
+  roles:
+    - { role: resource-metrics, appName: floating-point-operation-sine }
+  tags: floating-point-operation-sine
+
+- name: Trigger openfaas application
+  hosts: cloudmaster
+  roles:
+    - { role: trigger-openfaas-app, appName: floating-point-operation-sine }
+  tags: floating-point-operation-sine
+
+- name: Kill the resource metrics script
+  hosts: cloudworker
+  roles:
+    - { role: kill-resource-metrics, appName: dd-cmd }
+  tags: floating-point-operation-sine
+
+- name: Deploy openfaas application
+  hosts: cloudmaster
+  roles:
+    - { role: deploy-openfaas-app, appName: dd-cmd }
+  tags: dd-cmd
+
+- name: Start openfaas application resource metrics
+  hosts: cloudworker
+  roles:
+    - { role: resource-metrics, appName: dd-cmd }
+  tags: dd-cmd
+
+- name: Trigger openfaas application
+  hosts: cloudmaster
+  roles:
+    - { role: trigger-openfaas-app, appName: dd-cmd }
+  tags: dd-cmd
+
+- name: Kill the resource metrics script
+  hosts: cloudworker
+  roles:
+    - { role: kill-resource-metrics, appName: dd-cmd }
+  tags: dd-cmd
+
+- name: Deploy openfaas application
+  hosts: cloudmaster
+  roles:
+    - { role: deploy-openfaas-app, appName: matrix-multiplication-low }
+  tags: matrix-multiplication-low
+
+- name: Start openfaas application resource metrics
+  hosts: cloudworker
+  roles:
+    - { role: resource-metrics, appName: matrix-multiplication-low }
+  tags: matrix-multiplication-low
+
+- name: Trigger openfaas application
+  hosts: cloudmaster
+  roles:
+    - { role: trigger-openfaas-app, appName: matrix-multiplication-low }
+  tags: matrix-multiplication-low
+
+- name: Kill the resource metrics script
+  hosts: cloudworker
+  roles:
+    - { role: kill-resource-metrics, appName: matrix-multiplication-low }
+  tags: matrix-multiplication-low
+# ps aux | grep collect-metrics.sh | grep /bin/sh | awk '{print $2}' | xargs kill -9

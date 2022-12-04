@@ -1,0 +1,17 @@
+---
+- name: OpenFaas port forward
+  shell: nohup kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+
+- name: Login openfaas
+  shell: |
+    PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
+    echo -n $PASSWORD | faas-cli login --username admin --password-stdin
+
+- name: Login docker
+  shell: docker login -u nightmare224 -p efreet224
+
+- name: Install hey packet
+  become: yes
+  apt:
+    update_cache: yes
+    name: hey

@@ -1,0 +1,35 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  floating-point-operation-sine:
+    lang: python3-debian
+    handler: ./floating-point-operation-sine
+    image: nightmare224/floating-point-operation-sine:latest
+    # limits:
+    #   cpu: 4000m
+    # requests:
+    #   cpu: 100m
+    environment:
+      read_timeout: "5m5s"
+      write_timeout: "5m5s"
+      exec_timeout: "5m5s"
+    labels:
+      com.openfaas.scale.min: 1
+  dd-cmd: 
+    lang: python3-debian
+    handler: ./dd-cmd
+    image: nightmare224/dd-cmd:latest
+    environment:
+      read_timeout: "5m5s"
+      write_timeout: "5m5s"
+      exec_timeout: "5m5s"
+  matrix-multiplication-low:
+    lang: python3-debian
+    handler: ./matrix-multiplication-low
+    image: nightmare224/matrix-multiplication-low:latest
+    environment:
+        read_timeout: "5m5s"
+        write_timeout: "5m5s"
+        exec_timeout: "5m5s"

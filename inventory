@@ -1,0 +1,9 @@
+[all:vars]
+ansible_ssh_private_key_file=/home/ds2022-lab1-5/.ssh/id_rsa_benchmark
+
+[cloudmaster]
+cloud_controller_ds2022-lab1-5 ansible_connection=ssh ansible_host=192.168.157.2 ansible_user=cloud_controller_ds2022-lab1-5 
+
+[cloudworker]
+cloud0_ds2022-lab1-5 ansible_connection=ssh ansible_host=192.168.157.3 ansible_user=cloud0_ds2022-lab1-5
+cloud1_ds2022-lab1-5 ansible_connection=ssh ansible_host=192.168.157.4 ansible_user=cloud1_ds2022-lab1-5
