@@ -19,5 +19,5 @@
     faas-cli up -f stack.yml --filter {{ appName }}
 
 - name: Wait openfaas appliaction up
-  command: curl http://127.0.0.1:8080/function/{{ appName }}
-  # command: kubectl wait -n openfaas-fn -l faas_function={{ appName }} --all pod --for=condition=Ready --timeout=300s
+  # command: curl http://127.0.0.1:8080/function/{{ appName }}
+  command: kubectl wait -n openfaas-fn -l faas_function={{ appName }} --all pod --for=condition=Ready --timeout=300s
