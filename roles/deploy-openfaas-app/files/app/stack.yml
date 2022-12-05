@@ -7,10 +7,12 @@ functions:
     lang: python3-debian
     handler: ./floating-point-operation-sine
     image: nightmare224/floating-point-operation-sine:latest
-    # limits:
-    #   cpu: 4000m
-    # requests:
-    #   cpu: 100m
+    limits:
+      memory: 3072Mi
+      cpu: 4000m
+    requests:
+      memory: 10Mi
+      cpu: 10m
     environment:
       read_timeout: "5m5s"
       write_timeout: "5m5s"
@@ -21,23 +23,47 @@ functions:
     lang: python3-debian
     handler: ./dd-cmd
     image: nightmare224/dd-cmd:latest
+    limits:
+      memory: 3072Mi
+      cpu: 4000m
+    requests:
+      memory: 10Mi
+      cpu: 10m
     environment:
       read_timeout: "5m5s"
       write_timeout: "5m5s"
       exec_timeout: "5m5s"
+    labels:
+      com.openfaas.scale.min: 1
   matrix-multiplication-low:
     lang: python3-debian
     handler: ./matrix-multiplication-low
     image: nightmare224/matrix-multiplication-low:latest
+    limits:
+      memory: 3072Mi
+      cpu: 4000m
+    requests:
+      memory: 10Mi
+      cpu: 10m
     environment:
-        read_timeout: "5m5s"
-        write_timeout: "5m5s"
-        exec_timeout: "5m5s"
+      read_timeout: "5m5s"
+      write_timeout: "5m5s"
+      exec_timeout: "5m5s"
+    labels:
+      com.openfaas.scale.min: 1
   fast-fourier-transform:
     lang: python3-debian
     handler: ./fast-fourier-transform
     image: nightmare224/fast-fourier-transform:latest
+    limits:
+      memory: 3072Mi
+      cpu: 4000m
+    requests:
+      memory: 10Mi
+      cpu: 10m
     environment:
-        read_timeout: "5m5s"
-        write_timeout: "5m5s"
-        exec_timeout: "5m5s"
+      read_timeout: "5m5s"
+      write_timeout: "5m5s"
+      exec_timeout: "5m5s"
+    labels:
+      com.openfaas.scale.min: 1

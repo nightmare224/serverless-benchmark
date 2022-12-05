@@ -1,0 +1,10 @@
+---
+- name: Output pod log file
+  shell: |
+    podname={{ appName }}
+    arr=(`kubectl get pod -n openfaas-fn | sed -n "s/\(${podname}-[^ ]*\)\(.*\)/\1/gp" | tr '\n' ' '`)
+    for pod in ${arr[@]}; do kubectl logs -n openfaas-fn ${pod} > ${pod}; done
+  args:
+    executable: /bin/bash
+
+  

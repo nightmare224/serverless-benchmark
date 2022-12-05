@@ -29,6 +29,12 @@
     - { role: kill-resource-metrics, appName: dd-cmd }
   tags: floating-point-operation-sine
 
+- name: Get pod logs
+  hosts: cloudmaster
+  roles:
+    - { role: response-log, appName: floating-point-operation-sine }
+  tags: floating-point-operation-sine
+
 - name: Deploy openfaas application
   hosts: cloudmaster
   roles:
@@ -51,6 +57,12 @@
   hosts: cloudworker
   roles:
     - { role: kill-resource-metrics, appName: dd-cmd }
+  tags: dd-cmd
+
+- name: Get pod logs
+  hosts: cloudmaster
+  roles:
+    - { role: response-log, appName: dd-cmd }
   tags: dd-cmd
 
 - name: Deploy openfaas application
@@ -77,6 +89,12 @@
     - { role: kill-resource-metrics, appName: matrix-multiplication-low }
   tags: matrix-multiplication-low
 
+- name: Get pod logs
+  hosts: cloudmaster
+  roles:
+    - { role: response-log, appName: matrix-multiplication-low }
+  tags: matrix-multiplication-low
+
 - name: Deploy openfaas application
   hosts: cloudmaster
   roles:
@@ -99,5 +117,11 @@
   hosts: cloudworker
   roles:
     - { role: kill-resource-metrics, appName: fast-fourier-transform }
+  tags: fast-fourier-transform
+
+- name: Get pod logs
+  hosts: cloudmaster
+  roles:
+    - { role: response-log, appName: fast-fourier-transform }
   tags: fast-fourier-transform
 # ps aux | grep collect-metrics.sh | grep /bin/sh | awk '{print $2}' | xargs kill -9
