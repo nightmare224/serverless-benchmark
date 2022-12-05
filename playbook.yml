@@ -3,7 +3,7 @@
   hosts: cloudmaster
   roles:
     - { role: env-init }
-  tags: init
+  tags: env-init
 
 - name: Deploy openfaas application
   hosts: cloudmaster
