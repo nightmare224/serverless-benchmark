@@ -26,8 +26,7 @@ def get_pod_to_resource(filename):
     pod_to_resource = {}
     with open(filename) as f:
         lines = f.readlines()
-        lines_len = len(lines)
-        for cnt, line in enumerate(lines):
+        for line in lines:
             line = line[:-1] if line[-1] == "\n" else line
             rsrc = line.split("|")
             # retrive metric
@@ -101,33 +100,29 @@ def add_trace_to_fig(fig, pod_to_resource, col_no):
             )
             row += 1
 
+subplot_tiltes = []
+testcase_no = 3
+for title in ["cpu","memory","block I/O (in)","block I/O (out)","inflight request"]:
+    for i in range(testcase_no):
+        subplot_tiltes.append(title)
 
 fig = make_subplots(
     rows=5,
-    cols=2,
+    cols=3,
     shared_xaxes=True,
     shared_yaxes=True,
     vertical_spacing=0.05,
     horizontal_spacing=0.02,
-    subplot_titles=(
-        "cpu",
-        "cpu",
-        "memory",
-        "memory",
-        "block I/O (in)",
-        "block I/O (in)",
-        "block I/O (out)",
-        "block I/O (out)",
-        "inflight request",
-        "inflight request",
-    ),
+    subplot_titles=subplot_tiltes ,
 )
 
+# 1 pod
 pod_to_resource1 = get_pod_to_resource("./data/fpo/pod_no1/fpo-resource-1pod")
 pod_to_resource1 = add_inflight(
     "./data/fpo/pod_no1/floating-point-operation-sine-dc4cd8956-8bcqd", pod_to_resource1
 )
 add_trace_to_fig(fig, pod_to_resource1, 1)
+# 3 pod
 pod_to_resource2 = get_pod_to_resource("./data/fpo/pod_no3/fpo-resource-3pod")
 add_inflight(
     "./data/fpo/pod_no3/floating-point-operation-sine-65ffc5884b-b445g",
@@ -142,15 +137,38 @@ add_inflight(
     pod_to_resource2,
 )
 add_trace_to_fig(fig, pod_to_resource2, 2)
+# 5 pod
+pod_to_resource3 = get_pod_to_resource("./data/fpo/pod_no5/fpo-resource-5pod")
+add_inflight(
+    "./data/fpo/pod_no5/floating-point-operation-sine-96dc4754d-c5t88",
+    pod_to_resource3,
+)
+add_inflight(
+    "./data/fpo/pod_no5/floating-point-operation-sine-96dc4754d-gwvst",
+    pod_to_resource3,
+)
+add_inflight(
+    "./data/fpo/pod_no5/floating-point-operation-sine-96dc4754d-wpt7l",
+    pod_to_resource3,
+)
+add_inflight(
+    "./data/fpo/pod_no5/floating-point-operation-sine-96dc4754d-gw9vk",
+    pod_to_resource3,
+)
+add_inflight(
+    "./data/fpo/pod_no5/floating-point-operation-sine-96dc4754d-mmj9p",
+    pod_to_resource3,
+)
+add_trace_to_fig(fig, pod_to_resource3, 3)
 
 fig.update_layout(
-    height=1000, width=1300, title_text=f"{TASK} (hey -t 0 -z 1m -c 20 -q 5)", showlegend=False
+    height=1000, width=1500, title_text=f"{TASK}", showlegend=False
 )
 
 fig['layout']['yaxis']['title']='percentage'
-fig['layout']['yaxis3']['title']='percentage'
-fig['layout']['yaxis5']['title']='MB'
+fig['layout']['yaxis4']['title']='percentage'
 fig['layout']['yaxis7']['title']='MB'
-fig['layout']['yaxis9']['title']='request Count'
-# fig.write_html(f"/Users/thl/Documents/VU/distributedSystem/lab/result/{TASK}.html")
+fig['layout']['yaxis10']['title']='MB'
+fig['layout']['yaxis13']['title']='request Count'
+fig.write_html(f"/Users/thl/Documents/VU/distributedSystem/lab/result/{TASK}-resource.html")
 fig.show()
