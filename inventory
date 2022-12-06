@@ -1,6 +1,10 @@
 [all:vars]
 ansible_ssh_private_key_file=/home/ds2022-lab1-5/.ssh/id_rsa_benchmark
 
+[cloudmaster:vars]
+docker_username=nightmare224
+docker_password=passwd
+
 [cloudmaster]
 cloud_controller_ds2022-lab1-5 ansible_connection=ssh ansible_host=192.168.157.2 ansible_user=cloud_controller_ds2022-lab1-5 
 

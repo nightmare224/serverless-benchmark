@@ -1,6 +1,6 @@
 ---
 - name: OpenFaas port forward
-  shell: nohup kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+  command: nohup kubectl port-forward -n openfaas svc/gateway 8080:8080 &
 
 - name: Login openfaas
   shell: |
@@ -10,7 +10,7 @@
     executable: /bin/bash
 
 - name: Login docker
-  shell: docker login -u nightmare224 -p efreet224
+  shell: docker login -u {{ docker_username }} -p {{ docker_password }}
 
 - name: Install hey packet
   become: yes
