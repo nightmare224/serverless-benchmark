@@ -1,6 +1,10 @@
 ---
 - name: OpenFaas port forward
-  command: nohup kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+  shell: nohup kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+  args:
+    executable: /bin/bash
+  async: 1200
+  poll: 0 # never hup
 
 - name: Login openfaas
   shell: |
