@@ -1,7 +1,7 @@
 ---
 - name: Pause 10 seconds to collect
   ansible.builtin.pause:
-    seconds: 10
+    seconds: 2
 
 - name: Kill collect metrics script
   shell: ps aux | grep collect-metrics.sh | grep /bin/sh | awk '{print $2}' | xargs kill -9

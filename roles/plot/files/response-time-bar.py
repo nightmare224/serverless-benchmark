@@ -1,10 +1,11 @@
 import plotly.graph_objects as go
+import os
 from statistics import mean
 from files import files
 
 
 TASK = "floating-point-operation-sine"
-OUTPUT = f"/Users/thl/Documents/VU/distributedSystem/lab/result/{TASK}-responsetime.html"
+OUTPUT = f"./{os.getcwd()}/result/{TASK}-responsetime.html"
 
 
 def get_response_time_list(filename_list):
@@ -40,5 +41,5 @@ for pod_no in pods_no:
 fig = go.Figure(bar_list)
 
 fig.update_layout(barmode="group")
-# fig.write_html(OUTPUT)
+fig.write_html(OUTPUT)
 fig.show()

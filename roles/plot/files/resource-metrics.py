@@ -1,4 +1,5 @@
 import plotly.graph_objects as go
+import os
 from pathlib import Path
 from plotly.subplots import make_subplots
 from datetime import datetime
@@ -9,7 +10,7 @@ from files import files
 
 
 TASK = "floating-point-operation-sine"
-OUTPUT = f"/Users/ystu/Downloads/{TASK}-resource.html"
+OUTPUT = f"{os.getcwd()}/result/{TASK}-resource.html"
 
 
 def to_MB(data):
