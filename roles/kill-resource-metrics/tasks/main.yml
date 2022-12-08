@@ -11,5 +11,5 @@
 - name: Fetch resource metrics from workers
   fetch:
     src: ~/floating-point-operation-sine-{{ ansible_user }}
-    dest: "{{ role_path }}/../plot/files/data/resource/pod{{ pod_no }}/"
+    dest: "{{ role_path }}/../plot/files/data/{{ appName }}/resource/"
     flat: true

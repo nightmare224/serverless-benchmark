@@ -26,7 +26,7 @@
 - name: Kill the resource metrics script
   hosts: cloudworker
   roles:
-    - { role: kill-resource-metrics, appName: dd-cmd }
+    - { role: kill-resource-metrics, appName: floating-point-operation-sine }
   tags: floating-point-operation-sine
 
 - name: Get pod logs
