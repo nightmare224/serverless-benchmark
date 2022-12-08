@@ -8,132 +8,41 @@
 - name: Create localhost plot data directory
   hosts: localhost
   roles:
-    - { role: plot-init, appName: floating-point-operation-sine }
-  tags: floating-point-operation-sine
+    - { role: plot-init }
+  # tags: floating-point-operation-sine
 
 - name: Deploy openfaas application
   hosts: cloudmaster
   roles:
-    - { role: deploy-openfaas-app, appName: floating-point-operation-sine }
-  tags: floating-point-operation-sine
+    - { role: deploy-openfaas-app }
+  # tags: floating-point-operation-sine
 
 - name: Start openfaas application resource metrics
   hosts: cloudworker
   roles:
-    - { role: resource-metrics, appName: floating-point-operation-sine }
-  tags: floating-point-operation-sine
+    - { role: resource-metrics }
+  # tags: floating-point-operation-sine
 
 - name: Trigger openfaas application
   hosts: cloudmaster
   roles:
-    - { role: trigger-openfaas-app, appName: floating-point-operation-sine }
-  tags: floating-point-operation-sine
+    - { role: trigger-openfaas-app }
+  # tags: floating-point-operation-sine
 
 - name: Kill the resource metrics script
   hosts: cloudworker
   roles:
-    - { role: kill-resource-metrics, appName: floating-point-operation-sine }
-  tags: floating-point-operation-sine
+    - { role: kill-resource-metrics }
+  # tags: floating-point-operation-sine
 
 - name: Get pod logs
   hosts: cloudmaster
   roles:
-    - { role: response-log, appName: floating-point-operation-sine }
-  tags: floating-point-operation-sine
+    - { role: response-log }
+  # tags: floating-point-operation-sine
 
 - name: Clean plot data
   hosts: localhost
   roles:
-    - {role: plot, appName: floating-point-operation-sine }
-  tags: floating-point-operation-sine
-
-- name: Deploy openfaas application
-  hosts: cloudmaster
-  roles:
-    - { role: deploy-openfaas-app, appName: dd-cmd }
-  tags: dd-cmd
-
-- name: Start openfaas application resource metrics
-  hosts: cloudworker
-  roles:
-    - { role: resource-metrics, appName: dd-cmd }
-  tags: dd-cmd
-
-- name: Trigger openfaas application
-  hosts: cloudmaster
-  roles:
-    - { role: trigger-openfaas-app, appName: dd-cmd }
-  tags: dd-cmd
-
-- name: Kill the resource metrics script
-  hosts: cloudworker
-  roles:
-    - { role: kill-resource-metrics, appName: dd-cmd }
-  tags: dd-cmd
-
-- name: Get pod logs
-  hosts: cloudmaster
-  roles:
-    - { role: response-log, appName: dd-cmd }
-  tags: dd-cmd
-
-- name: Deploy openfaas application
-  hosts: cloudmaster
-  roles:
-    - { role: deploy-openfaas-app, appName: matrix-multiplication-low }
-  tags: matrix-multiplication-low
-
-- name: Start openfaas application resource metrics
-  hosts: cloudworker
-  roles:
-    - { role: resource-metrics, appName: matrix-multiplication-low }
-  tags: matrix-multiplication-low
-
-- name: Trigger openfaas application
-  hosts: cloudmaster
-  roles:
-    - { role: trigger-openfaas-app, appName: matrix-multiplication-low }
-  tags: matrix-multiplication-low
-
-- name: Kill the resource metrics script
-  hosts: cloudworker
-  roles:
-    - { role: kill-resource-metrics, appName: matrix-multiplication-low }
-  tags: matrix-multiplication-low
-
-- name: Get pod logs
-  hosts: cloudmaster
-  roles:
-    - { role: response-log, appName: matrix-multiplication-low }
-  tags: matrix-multiplication-low
-
-- name: Deploy openfaas application
-  hosts: cloudmaster
-  roles:
-    - { role: deploy-openfaas-app, appName: fast-fourier-transform }
-  tags: fast-fourier-transform
-
-- name: Start openfaas application resource metrics
-  hosts: cloudworker
-  roles:
-    - { role: resource-metrics, appName: fast-fourier-transform }
-  tags: fast-fourier-transform
-
-- name: Trigger openfaas application
-  hosts: cloudmaster
-  roles:
-    - { role: trigger-openfaas-app, appName: fast-fourier-transform }
-  tags: fast-fourier-transform
-
-- name: Kill the resource metrics script
-  hosts: cloudworker
-  roles:
-    - { role: kill-resource-metrics, appName: fast-fourier-transform }
-  tags: fast-fourier-transform
-
-- name: Get pod logs
-  hosts: cloudmaster
-  roles:
-    - { role: response-log, appName: fast-fourier-transform }
-  tags: fast-fourier-transform
-# ps aux | grep collect-metrics.sh | grep /bin/sh | awk '{print $2}' | xargs kill -9
+    - {role: plot }
+  # tags: floating-point-operation-sine
