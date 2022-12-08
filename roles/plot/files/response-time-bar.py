@@ -27,7 +27,7 @@ bar_list = []
 x = ["Average time", "Max time", "Min time"]
 
 data = files(TASK)
-pods_no = data.get_pod_no()
+pods_no = data.get_pods_no()
 for pod_no in pods_no:
     filename_list = data.get_logs_name(pod_no)
     bar_list.append(

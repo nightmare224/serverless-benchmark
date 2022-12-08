@@ -9,6 +9,7 @@ from files import files
 
 
 TASK = "floating-point-operation-sine"
+OUTPUT = f"/Users/ystu/Downloads/{TASK}-resource.html"
 
 
 def to_MB(data):
@@ -107,33 +108,39 @@ for title in ["cpu","memory","block I/O (in)","block I/O (out)","inflight reques
     for i in range(testcase_no):
         subplot_tiltes.append(title)
 
+
+data = files(TASK)
+pods_no = data.get_pods_no()
 fig = make_subplots(
     rows=5,
-    cols=3,
+    cols=len(pods_no),
     shared_xaxes=True,
     shared_yaxes=True,
     vertical_spacing=0.05,
     horizontal_spacing=0.02,
     subplot_titles=subplot_tiltes ,
 )
-data = files(TASK)
-pods_no = data.get_pod_no()
 for num, pod_no in enumerate(pods_no):
-    resource = data.get_resource_name(pod_no)
+    resource = data.get_resource_name(pod_no)[0]
+    # print(f'resource: {resource}')
     logs = data.get_logs_name(pod_no)
     pod_to_resource = get_pod_to_resource(resource)
     for log in logs:
         pod_to_resource = add_inflight(log, pod_to_resource)
-    add_trace_to_fig(fig, pod_to_resource, num)
+    add_trace_to_fig(fig, pod_to_resource, num + 1)
 
 fig.update_layout(
     height=1000, width=1500, title_text=f"{TASK}", showlegend=False
 )
-
-fig['layout']['yaxis']['title']='percentage'
-fig['layout']['yaxis4']['title']='percentage'
-fig['layout']['yaxis7']['title']='MB'
-fig['layout']['yaxis10']['title']='MB'
-fig['layout']['yaxis13']['title']='request Count'
-# fig.write_html(f"/Users/ystu/Downloads/{TASK}-resource.html")
+num = 1
+fig['layout'][f'yaxis{num}']['title']='percentage'
+num += len(pods_no)
+fig['layout'][f'yaxis{num}']['title']='percentage'
+num += len(pods_no)
+fig['layout'][f'yaxis{num}']['title']='MB'
+num += len(pods_no)
+fig['layout'][f'yaxis{num}']['title']='MB'
+num += len(pods_no)
+fig['layout'][f'yaxis{num}']['title']='request count'
+fig.write_html(OUTPUT)
 fig.show()
