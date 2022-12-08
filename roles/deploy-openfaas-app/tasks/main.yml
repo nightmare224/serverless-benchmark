@@ -4,10 +4,6 @@
     src: "{{ role_path }}/files/app"
     dest: /home/{{ ansible_user }}/
 
-- name: Config pod number
-  shell: |
-    sed -i s/{{ appName }} /home/{{ ansible_user }}/app/stack.yml
-
 - name: Remove old openfaas application
   command: faas-cli remove {{ appName }}
   ignore_errors: true
