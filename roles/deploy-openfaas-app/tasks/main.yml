@@ -20,7 +20,7 @@
 - name: Deploy openfaas application
   shell: |
     cd /home/{{ ansible_user }}/app
-    faas-cli up -f stack.yml --filter {{ appName }} --label com.openfaas.scale.min={{ podNo }}
+    faas-cli up -f stack.yml --filter {{ appName }} --label com.openfaas.scale.min={{ pod_no }}
 
 - name: Wait openfaas appliaction up
   # command: curl http://127.0.0.1:8080/function/{{ appName }}
