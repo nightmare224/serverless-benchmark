@@ -8,7 +8,7 @@
     mkdir -p ${filepath}
     rm -f ${filepath}/*
     for pod in ${arr[@]}; do kubectl logs -n openfaas-fn ${pod} > ${filepath}/${pod}; done
-    cd ${filepath}/.. && tar -cf log-${podname}.tar pod${podno} && mv log-${podname}.tar ~/
+    cd ${filepath} && tar -cf log-${podname}.tar * && mv log-${podname}.tar ~/
   args:
     executable: /bin/bash
 
@@ -16,7 +16,7 @@
 - name: Send back to localhost
   fetch:
     src: log-{{ appName }}.tar
-    dest: "{{ role_path }}/../plot/files/data/{{ appName }}/log/"
+    dest: "{{ role_path }}/../plot/files/data/{{ appName }}/pod{{ pod_no }}/log/"
     flat: yes
 
 - name: remove tar file

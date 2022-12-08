@@ -5,6 +5,12 @@
     - { role: env-init }
   tags: env-init
 
+- name: Create localhost plot data directory
+  hosts: localhost
+  roles:
+    - { role: plot-init, appName: floating-point-operation-sine }
+  tags: floating-point-operation-sine
+
 - name: Deploy openfaas application
   hosts: cloudmaster
   roles:
