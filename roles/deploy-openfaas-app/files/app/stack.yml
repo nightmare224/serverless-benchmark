@@ -11,8 +11,8 @@ functions:
       memory: 3072Mi
       cpu: 4000m
     requests:
-      memory: 10Mi
-      cpu: 10m
+      memory: 0Mi
+      cpu: 0m
     environment:
       read_timeout: "5m5s"
       write_timeout: "5m5s"
@@ -27,8 +27,8 @@ functions:
       memory: 3072Mi
       cpu: 4000m
     requests:
-      memory: 10Mi
-      cpu: 10m
+      memory: 0Mi
+      cpu: 0m
     environment:
       read_timeout: "5m5s"
       write_timeout: "5m5s"
@@ -43,8 +43,8 @@ functions:
       memory: 3072Mi
       cpu: 4000m
     requests:
-      memory: 10Mi
-      cpu: 10m
+      memory: 0Mi
+      cpu: 0m
     environment:
       read_timeout: "5m5s"
       write_timeout: "5m5s"
@@ -59,8 +59,8 @@ functions:
       memory: 3072Mi
       cpu: 4000m
     requests:
-      memory: 10Mi
-      cpu: 10m
+      memory: 0Mi
+      cpu: 0m
     environment:
       read_timeout: "5m5s"
       write_timeout: "5m5s"

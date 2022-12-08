@@ -4,5 +4,7 @@
     cd {{ role_path }}/files/data/{{ appName }}/pod{{ pod_no}}/log/
     tar -xf log-{{ appName }}.tar && rm -f log-{{ appName }}.tar
     cd {{ role_path }}/files/data/{{ appName }}/pod{{ pod_no}}/resource
-    cat {{ appName }}* | awk 'NF==3{print}' | sort | uniq > out
+    cat {{ appName }}* | awk 'BEGIN{FS="|"} NF==5{print}' | sort | uniq > out
     rm {{ role_path }}/files/data/{{ appName }}/pod{{ pod_no}}/resource/{{ appName }}*
+  args:
+    executable: /bin/bash
