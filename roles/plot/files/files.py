@@ -1,16 +1,14 @@
-from os import listdir
+from pathlib import Path
 
 class files:
     def __init__(self, task):
-        self.task = task
-        self.pods_no = listdir(f'data/{self.task}')
+        pods_no_with_parent = Path(f'{Path(f"{__file__}").parent}/data/{task}').iterdir()
+        self.pods_no = [pod_no.name for pod_no in pods_no_with_parent]
         self.resources = {}
         self.logs = {}
         for pod_no in self.pods_no:
-            tmp = listdir(f'data/{self.task}/{pod_no}/resource')
-            self.resources[pod_no] = [f'data/{self.task}/{pod_no}/resource/{resource_name}' for resource_name in tmp]
-            tmp = listdir(f'data/{self.task}/{pod_no}/log')
-            self.logs[pod_no] = [f'data/{self.task}/{pod_no}/log/{log_name}' for log_name in tmp]
+            self.resources[pod_no] = [path for path in Path(f'{Path(f"{__file__}").parent}/data/{task}/{pod_no}/resource').iterdir()]
+            self.logs[pod_no] = [path for path in Path(f'{Path(f"{__file__}").parent}/data/{task}/{pod_no}/log').iterdir()]
 
     def get_pods_no(self):
         return self.pods_no

@@ -1,5 +1,5 @@
 import plotly.graph_objects as go
-from os.path import basename
+from pathlib import Path
 from plotly.subplots import make_subplots
 from datetime import datetime
 from files import files
@@ -62,7 +62,7 @@ def get_pod_to_resource(filename):
 
 def add_inflight(filename, pod_to_resource):
     # inflight request
-    pod_name = basename(filename)
+    pod_name = Path(filename).name
     time_x = pod_to_resource[pod_name]["time"]
     inflight_y = [0]
     curr_time_idx = 0
