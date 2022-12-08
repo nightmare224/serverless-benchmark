@@ -16,7 +16,7 @@
 - name: Send back to localhost
   fetch:
     src: log-{{ appName }}.tar
-    dest: ~/
+    dest: "{{ role_path }}/../plot/files/data/log/"
     flat: yes
 
 - name: remove tar file

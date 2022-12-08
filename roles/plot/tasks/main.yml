@@ -1,0 +1,5 @@
+---
+- name: test
+  shell: |
+    mv ~/log-{{ appName }}.tar {{ role_path }}/files/data/{{ appName }}/log/
+    cd {{ role_path }}/files/data/{{ appName }}/log/ && tar -xf ~/log-{{ appName }}.tar
