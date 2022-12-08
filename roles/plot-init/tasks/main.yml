@@ -2,7 +2,7 @@
 - name: Create directory
   shell: |
     cd {{ role_path }}/../plot/files/data/
-    mkdir -p {{ appName }}/{{ pod_no }}/resource
-    mkdir -p {{ appName }}/{{ pod_no }}/log
+    mkdir -p {{ appName }}/pod{{ pod_no }}/resource
+    mkdir -p {{ appName }}/pod{{ pod_no }}/log
   args:
     executable: /bin/bash

@@ -41,11 +41,11 @@
     - { role: response-log, appName: floating-point-operation-sine }
   tags: floating-point-operation-sine
 
-# - name: Collect plot data
-#   hosts: localhost
-#   roles:
-#     - {role: plot, appName: floating-point-operation-sine }
-#   tags: floating-point-operation-sine
+- name: Clean plot data
+  hosts: localhost
+  roles:
+    - {role: plot, appName: floating-point-operation-sine }
+  tags: floating-point-operation-sine
 
 - name: Deploy openfaas application
   hosts: cloudmaster
