@@ -8,7 +8,7 @@
 - name: Deploy openfaas application
   hosts: cloudmaster
   roles:
-    - { role: deploy-openfaas-app, appName: floating-point-operation-sine }
+    - { role: deploy-openfaas-app, appName: floating-point-operation-sine, podNo: {{ pod_no }} }
   tags: floating-point-operation-sine
 
 - name: Start openfaas application resource metrics
@@ -34,6 +34,12 @@
   roles:
     - { role: response-log, appName: floating-point-operation-sine }
   tags: floating-point-operation-sine
+
+# - name: Collect plot data
+#   hosts: localhost
+#   roles:
+#     - {role: plot, appName: floating-point-operation-sine }
+#   tags: floating-point-operation-sine
 
 - name: Deploy openfaas application
   hosts: cloudmaster

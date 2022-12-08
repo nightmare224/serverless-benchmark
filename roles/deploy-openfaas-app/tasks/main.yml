@@ -4,6 +4,10 @@
     src: "{{ role_path }}/files/app"
     dest: /home/{{ ansible_user }}/
 
+- name: Config pod number
+  shell: |
+    sed -i s/{{ appName }} /home/{{ ansible_user }}/app/stack.yml
+
 - name: Remove old openfaas application
   command: faas-cli remove {{ appName }}
   ignore_errors: true
@@ -16,7 +20,7 @@
 - name: Deploy openfaas application
   shell: |
     cd /home/{{ ansible_user }}/app
-    faas-cli up -f stack.yml --filter {{ appName }}
+    faas-cli up -f stack.yml --filter {{ appName }} --label com.openfaas.scale.min={{ podNo }}
 
 - name: Wait openfaas appliaction up
   # command: curl http://127.0.0.1:8080/function/{{ appName }}
