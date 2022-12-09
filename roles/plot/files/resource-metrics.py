@@ -146,5 +146,5 @@ for i, unit in enumerate(["percentage", "percentage", "MB", "MB", "request count
     offset = 1 + i * pods_type_no
     fig["layout"][f"yaxis{offset}"]["title"] = unit
 
-# fig.write_html(OUTPUT)
+fig.write_html(OUTPUT)
 fig.show()
