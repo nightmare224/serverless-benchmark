@@ -33,12 +33,15 @@ def get_pod_to_resource(filename):
             line = line[:-1] if line[-1] == "\n" else line
             rsrc = line.split("|")
             # retrive metric
-            time = datetime.strptime(rsrc[0], "%Y/%m/%d %H:%M:%S ")
-            pod_name = rsrc[1].split("_")[2]
-            cpu = float(rsrc[2][:-1])
-            memory = float(rsrc[3][:-1])
-            blocki = to_MB(rsrc[4].split(" / ")[0])
-            blocko = to_MB(rsrc[4].split(" / ")[1])
+            try:
+                time = datetime.strptime(rsrc[0], "%Y/%m/%d %H:%M:%S ")
+                pod_name = rsrc[1].split("_")[2]
+                cpu = float(rsrc[2][:-1])
+                memory = float(rsrc[3][:-1])
+                blocki = to_MB(rsrc[4].split(" / ")[0])
+                blocko = to_MB(rsrc[4].split(" / ")[1])
+            except:
+                continue
             # set default
             pod_to_resource.setdefault(pod_name, {})
             pod_to_resource[pod_name].setdefault("time", [])
