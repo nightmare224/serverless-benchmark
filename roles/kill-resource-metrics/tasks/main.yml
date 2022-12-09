@@ -5,7 +5,7 @@
 
 - name: Kill collect metrics script
   # shell: ps aux | grep collect-metrics.sh | grep /bin/sh | awk '{print $2}' | xargs kill -9
-  shell: ps aux | grep "docker stats" | awk '{print $2}' | xargs kill -9
+  shell: ps x | grep "docker stats" | awk '{print $1}' | xargs kill -9
   ignore_errors: true
   failed_when: false
 
