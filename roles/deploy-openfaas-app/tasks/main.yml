@@ -4,6 +4,9 @@
     src: "{{ role_path }}/files/app"
     dest: /home/{{ ansible_user }}/
 
+- name: Modify the docker user
+  shell: sed -i s/<DOCKERUSER>/{{ docker_username }}/g /home/{{ ansible_user }}/app/stack.yml
+
 - name: Remove old openfaas application
   command: faas-cli remove {{ appName }}
   ignore_errors: true

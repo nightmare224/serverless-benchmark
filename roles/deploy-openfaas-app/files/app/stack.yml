@@ -6,66 +6,48 @@ functions:
   floating-point-operation-sine:
     lang: python3-debian
     handler: ./floating-point-operation-sine
-    image: nightmare224/floating-point-operation-sine:latest
+    image: <DOCKERUSER>/floating-point-operation-sine:latest
     environment:
-      read_timeout: "5m5s"
-      write_timeout: "5m5s"
-      exec_timeout: "5m5s"
+      read_timeout: 0
+      write_timeout: 0
+      exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
   sorter:
     lang: dockerfile
     handler: ./sorter
-    image: nightmare224/sorter:latest
+    image: <DOCKERUSER>/sorter:latest
     environment:
-        read_timeout: "5m5s"
-        write_timeout: "5m5s"
-        exec_timeout: "5m5s"
+        read_timeout: 0
+        write_timeout: 0
+        exec_timeout: 0
   dd-cmd: 
     lang: python3-debian
     handler: ./dd-cmd
-    image: nightmare224/dd-cmd:latest
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
+    image: <DOCKERUSER>/dd-cmd:latest
     environment:
-      read_timeout: "5m5s"
-      write_timeout: "5m5s"
-      exec_timeout: "5m5s"
+      read_timeout: 0
+      write_timeout: 0
+      exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
   matrix-multiplication-low:
     lang: python3-debian
     handler: ./matrix-multiplication-low
-    image: nightmare224/matrix-multiplication-low:latest
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
+    image: <DOCKERUSER>/matrix-multiplication-low:latest
     environment:
-      read_timeout: "5m5s"
-      write_timeout: "5m5s"
-      exec_timeout: "5m5s"
+      read_timeout: 0
+      write_timeout: 0
+      exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
   fast-fourier-transform:
     lang: python3-debian
     handler: ./fast-fourier-transform
-    image: nightmare224/fast-fourier-transform:latest
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
+    image: <DOCKERUSER>/fast-fourier-transform:latest
     environment:
-      read_timeout: "5m5s"
-      write_timeout: "5m5s"
-      exec_timeout: "5m5s"
+      read_timeout: 0
+      write_timeout: 0
+      exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
