@@ -65,6 +65,22 @@ functions:
     requests:
       memory: 0Mi
       cpu: 0m
+  matrix-multiplication-high:
+    lang: python3-debian
+    handler: ./matrix-multiplication-high
+    image: <DOCKERUSER>/matrix-multiplication-high:latest
+    environment:
+      read_timeout: 0
+      write_timeout: 0
+      exec_timeout: 0
+    labels:
+      com.openfaas.scale.min: 1
+    limits:
+      memory: 3072Mi
+      cpu: 4000m
+    requests:
+      memory: 0Mi
+      cpu: 0m
   fast-fourier-transform:
     lang: python3-debian
     handler: ./fast-fourier-transform
