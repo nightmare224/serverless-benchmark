@@ -28,12 +28,12 @@ bar_list = []
 x = ["Average time", "Max time", "Min time"]
 
 data = files(TASK)
-pods_no = data.get_pods_no()
+pods_no = sorted(data.get_pods_no())
 for pod_no in pods_no:
     filename_list = data.get_logs_name(pod_no)
     bar_list.append(
         go.Bar(
-            name=f"{pod_no[6:]} pod",
+            name=f"{pod_no[3:]} pod",
             x=x,
             y=get_response_time_list(filename_list)
         )
