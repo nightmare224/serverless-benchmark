@@ -112,15 +112,17 @@ def add_trace_to_fig(fig, pod_to_resource, col_no):
             row += 1
 
 
+data = files(TASK)
+pods_no = sorted(data.get_pods_no())
+testcase_no = len(pods_no)
+
 subplot_tiltes = []
-testcase_no = 3
 for title in ["cpu", "memory", "block I/O (in)", "block I/O (out)", "inflight request"]:
     for i in range(testcase_no):
         subplot_tiltes.append(title)
 
 
-data = files(TASK)
-pods_no = sorted(data.get_pods_no())
+
 fig = make_subplots(
     rows=5,
     cols=len(pods_no),
@@ -141,9 +143,9 @@ for num, pod_no in enumerate(pods_no):
 
 fig.update_layout(height=1000, width=1500, title_text=f"{TASK}", showlegend=False)
 
-pods_type_no = len(pods_no)
+
 for i, unit in enumerate(["percentage", "percentage", "MB", "MB", "request count"]):
-    offset = 1 + i * pods_type_no
+    offset = 1 + i * testcase_no
     fig["layout"][f"yaxis{offset}"]["title"] = unit
 
 fig.write_html(OUTPUT)
