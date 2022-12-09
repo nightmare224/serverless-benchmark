@@ -8,6 +8,8 @@
   shell: ps x | grep "docker stats" | awk '{print $1}' | xargs kill -9
   ignore_errors: true
   failed_when: false
+  args:
+    executable: /bin/bash
 
 - name: Fetch resource metrics from workers
   fetch:
