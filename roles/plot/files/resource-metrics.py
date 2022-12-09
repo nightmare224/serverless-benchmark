@@ -90,7 +90,7 @@ def add_inflight(filename, pod_to_resource):
 
 
 def add_trace_to_fig(fig, pod_to_resource, col_no):
-    color_list = px.colors.qualitative.Dark24
+    color_list = px.colors.qualitative.Bold
     col = col_no
     for pod_no, pod_name in enumerate(pod_to_resource.keys()):
         row = 1
