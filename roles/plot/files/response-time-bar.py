@@ -5,6 +5,7 @@ from files import files
 
 
 TASK = "floating-point-operation-sine"
+TASK = input("Task Name: ")
 OUTPUT = f"{os.getcwd()}/result/{TASK}-responsetime.html"
 
 

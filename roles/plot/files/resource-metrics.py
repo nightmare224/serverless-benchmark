@@ -11,6 +11,7 @@ from files import files
 
 
 TASK = "floating-point-operation-sine"
+TASK = input("Task Name: ")
 OUTPUT = f"{os.getcwd()}/result/{TASK}-resource.html"
 
 
@@ -139,15 +140,11 @@ for num, pod_no in enumerate(pods_no):
     add_trace_to_fig(fig, pod_to_resource, num + 1)
 
 fig.update_layout(height=1000, width=1500, title_text=f"{TASK}", showlegend=False)
-num = 1
-fig["layout"][f"yaxis{num}"]["title"] = "percentage"
-num += len(pods_no)
-fig["layout"][f"yaxis{num}"]["title"] = "percentage"
-num += len(pods_no)
-fig["layout"][f"yaxis{num}"]["title"] = "MB"
-num += len(pods_no)
-fig["layout"][f"yaxis{num}"]["title"] = "MB"
-num += len(pods_no)
-fig["layout"][f"yaxis{num}"]["title"] = "request count"
-fig.write_html(OUTPUT)
+
+pods_type_no = len(pods_no)
+for i, unit in enumerate(["percentage", "percentage", "MB", "MB", "request count"]):
+    offset = 1 + i * pods_type_no
+    fig["layout"][f"yaxis{offset}"]["title"] = unit
+
+# fig.write_html(OUTPUT)
 fig.show()
