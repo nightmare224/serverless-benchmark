@@ -7,18 +7,20 @@ functions:
     lang: python3-debian
     handler: ./floating-point-operation-sine
     image: nightmare224/floating-point-operation-sine:latest
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
     environment:
       read_timeout: "5m5s"
       write_timeout: "5m5s"
       exec_timeout: "5m5s"
     labels:
       com.openfaas.scale.min: 1
+  sorter:
+    lang: dockerfile
+    handler: ./sorter
+    image: nightmare224/sorter:latest
+    environment:
+        read_timeout: "5m5s"
+        write_timeout: "5m5s"
+        exec_timeout: "5m5s"
   dd-cmd: 
     lang: python3-debian
     handler: ./dd-cmd
