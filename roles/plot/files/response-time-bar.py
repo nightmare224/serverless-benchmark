@@ -5,7 +5,7 @@ from files import files
 
 
 TASK = "floating-point-operation-sine"
-OUTPUT = f"./{os.getcwd()}/result/{TASK}-responsetime.html"
+OUTPUT = f"{os.getcwd()}/result/{TASK}-responsetime.html"
 
 
 def get_response_time_list(filename_list):
