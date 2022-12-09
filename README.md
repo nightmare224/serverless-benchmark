@@ -14,7 +14,6 @@ Without those information, Ansible cannot connect to those target nodes.
 
 
 # Usage
-```
 After done all configuration, run the `deploy.sh` file.
 ```bash
 bash deploy.sh
