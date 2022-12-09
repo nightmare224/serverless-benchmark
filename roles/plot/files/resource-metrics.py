@@ -1,4 +1,5 @@
 import plotly.graph_objects as go
+import plotly.express as px
 import os
 from pathlib import Path
 from plotly.subplots import make_subplots
@@ -88,6 +89,7 @@ def add_inflight(filename, pod_to_resource):
 
 
 def add_trace_to_fig(fig, pod_to_resource, col_no):
+    color_list = px.colors.qualitative.Dark24
     col = col_no
     for pod_no, pod_name in enumerate(pod_to_resource.keys()):
         row = 1
@@ -100,15 +102,18 @@ def add_trace_to_fig(fig, pod_to_resource, col_no):
                     x=x,
                     y=y,
                     name=f"{rsrc_name} pod{pod_no}",
+                    marker_color=color_list[int(pod_no)]
+                    # marker={"color": [1]}
                 ),
                 row=row,
                 col=col,
             )
             row += 1
 
+
 subplot_tiltes = []
 testcase_no = 3
-for title in ["cpu","memory","block I/O (in)","block I/O (out)","inflight request"]:
+for title in ["cpu", "memory", "block I/O (in)", "block I/O (out)", "inflight request"]:
     for i in range(testcase_no):
         subplot_tiltes.append(title)
 
@@ -122,7 +127,7 @@ fig = make_subplots(
     shared_yaxes=True,
     vertical_spacing=0.05,
     horizontal_spacing=0.02,
-    subplot_titles=subplot_tiltes ,
+    subplot_titles=subplot_tiltes,
 )
 for num, pod_no in enumerate(pods_no):
     resource = data.get_resource_name(pod_no)[0]
@@ -133,18 +138,16 @@ for num, pod_no in enumerate(pods_no):
         pod_to_resource = add_inflight(log, pod_to_resource)
     add_trace_to_fig(fig, pod_to_resource, num + 1)
 
-fig.update_layout(
-    height=1000, width=1500, title_text=f"{TASK}", showlegend=False
-)
+fig.update_layout(height=1000, width=1500, title_text=f"{TASK}", showlegend=False)
 num = 1
-fig['layout'][f'yaxis{num}']['title']='percentage'
+fig["layout"][f"yaxis{num}"]["title"] = "percentage"
 num += len(pods_no)
-fig['layout'][f'yaxis{num}']['title']='percentage'
+fig["layout"][f"yaxis{num}"]["title"] = "percentage"
 num += len(pods_no)
-fig['layout'][f'yaxis{num}']['title']='MB'
+fig["layout"][f"yaxis{num}"]["title"] = "MB"
 num += len(pods_no)
-fig['layout'][f'yaxis{num}']['title']='MB'
+fig["layout"][f"yaxis{num}"]["title"] = "MB"
 num += len(pods_no)
-fig['layout'][f'yaxis{num}']['title']='request count'
+fig["layout"][f"yaxis{num}"]["title"] = "request count"
 fig.write_html(OUTPUT)
 fig.show()
