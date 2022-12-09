@@ -3,6 +3,7 @@
   shell: |
     mkdir -p {{ role_path }}/files/result
     cd {{ role_path }}/../plot/files/data/
+    rm -rf {{ appName }}/pod{{ pod_no }}
     mkdir -p {{ appName }}/pod{{ pod_no }}/resource
     mkdir -p {{ appName }}/pod{{ pod_no }}/log
   args:
