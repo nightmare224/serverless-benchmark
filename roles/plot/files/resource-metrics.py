@@ -111,7 +111,7 @@ for title in ["cpu","memory","block I/O (in)","block I/O (out)","inflight reques
 
 
 data = files(TASK)
-pods_no = data.get_pods_no()
+pods_no = sorted(data.get_pods_no())
 fig = make_subplots(
     rows=5,
     cols=len(pods_no),
