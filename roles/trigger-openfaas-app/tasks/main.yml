@@ -1,3 +1,10 @@
 ---
+- name: Copy the request pattern script to node
+  copy:
+    src: "{{ role_path }}/files/{{ request_pattern }}.sh"
+    dest: /home/{{ ansible_user }}/
+
+
 - name: Trigger openfaas application
-  shell: hey -t 0 -z 1m -c 20 -q 5 http://127.0.0.1:8080/function/{{ appName }} > /tmp/out
+  shell: bash /home/{{ ansible_user }}/{{ request_pattern }}.sh
+  # shell: hey -t 0 -z 1m -c 20 -q 5 http://127.0.0.1:8080/function/{{ appName }} > /tmp/out

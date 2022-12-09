@@ -2,6 +2,7 @@
 ansible_ssh_private_key_file=/home/ds2022-lab1-5/.ssh/id_rsa_benchmark
 pod_no=3
 appName=floating-point-operation-sine
+request_pattern=pattern1
 
 [cloudmaster:vars]
 docker_username=nightmare224
