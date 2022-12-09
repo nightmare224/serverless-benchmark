@@ -1,6 +1,6 @@
 import plotly.graph_objects as go
 import os
-from statistics import mean
+from statistics import mean, stdev
 from files import files
 
 
@@ -22,11 +22,11 @@ def get_response_time_list(filename_list):
                     duration = float(rsp[7][:-1])
                     duration_list.append(duration)
 
-    return [mean(duration_list), max(duration_list), min(duration_list)]
+    return [mean(duration_list), max(duration_list), min(duration_list), stdev(duration_list)]
 
 
 bar_list = []
-x = ["Average time", "Max time", "Min time"]
+x = ["Average time", "Max time", "Min time", "Standard deviation"]
 
 data = files(TASK)
 pods_no = sorted(data.get_pods_no())
