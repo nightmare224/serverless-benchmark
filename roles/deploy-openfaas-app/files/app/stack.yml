@@ -11,12 +11,6 @@ functions:
       read_timeout: 0
       write_timeout: 0
       exec_timeout: 0
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
     labels:
       com.openfaas.scale.min: 1
   sorter:
@@ -27,12 +21,6 @@ functions:
         read_timeout: 0
         write_timeout: 0
         exec_timeout: 0
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
   dd-cmd: 
     lang: python3-debian
     handler: ./dd-cmd
@@ -43,12 +31,6 @@ functions:
       exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
   matrix-multiplication-low:
     lang: python3-debian
     handler: ./matrix-multiplication-low
@@ -59,12 +41,6 @@ functions:
       exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
   matrix-multiplication-high:
     lang: python3-debian
     handler: ./matrix-multiplication-high
@@ -75,12 +51,6 @@ functions:
       exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
-    limits:
-      memory: 3072Mi
-      cpu: 4000m
-    requests:
-      memory: 0Mi
-      cpu: 0m
   fast-fourier-transform:
     lang: python3-debian
     handler: ./fast-fourier-transform
