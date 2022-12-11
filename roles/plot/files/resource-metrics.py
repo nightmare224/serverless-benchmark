@@ -9,8 +9,8 @@ from config import *
 
 # Every one seconds would have metric
 
-
-TASK_NAME = input("Task Name: ")
+task_name = input(f"Task Name (default task is {TASK_NAME}, press ENTER to skip): ")
+TASK_NAME = TASK_NAME if task_name == "" else task_name
 OUTPUT = f"{os.getcwd()}/result/{TASK_NAME}-resource.html"
 
 
@@ -37,7 +37,7 @@ def get_pod_to_resource(filename):
             try:
                 time = datetime.strptime(rsrc[0], "%Y/%m/%d %H:%M:%S ")
                 pod_name = rsrc[1].split("_")[2]
-                cpu = float(rsrc[2][:-1])/CORE_NUM
+                cpu = float(rsrc[2][:-1]) / CORE_NUM
                 memory = float(rsrc[3][:-1])
                 blocki = to_MB(rsrc[4].split(" / ")[0])
                 blocko = to_MB(rsrc[4].split(" / ")[1])
@@ -87,12 +87,14 @@ def add_inflight(filename, pod_to_resource):
     pod_to_resource[pod_name]["inflight"] = inflight_y
     return pod_to_resource
 
+
 def format_time(pod_to_resource):
     for pod_name in pod_to_resource:
         starttime = pod_to_resource[pod_name]["time"][0]
         for idx, time in enumerate(pod_to_resource[pod_name]["time"]):
             pod_to_resource[pod_name]["time"][idx] = (time - starttime).total_seconds()
     return pod_to_resource
+
 
 def add_trace_to_fig(fig, pod_to_resource, col_no, last):
     color_list = px.colors.qualitative.Bold
@@ -110,7 +112,7 @@ def add_trace_to_fig(fig, pod_to_resource, col_no, last):
                     name=f"pod{pod_no}",
                     marker_color=color_list[int(pod_no)],
                     legendgroup=f"pod{pod_no}",
-                    showlegend=last and row == 1
+                    showlegend=last and row == 1,
                 ),
                 row=row,
                 col=col,
@@ -121,14 +123,19 @@ def add_trace_to_fig(fig, pod_to_resource, col_no, last):
 data = files(TASK_NAME)
 pods_no = sorted(data.get_pods_no())
 testcase_no = len(pods_no)
-metric_titles = ["CPU Load", "Memory Load", "Block I/O (In)", "Block I/O (Out)", "Inflight Request"]
+metric_titles = [
+    "CPU Load",
+    "Memory Load",
+    "Block I/O (In)",
+    "Block I/O (Out)",
+    "Inflight Request",
+]
 metric_no = len(metric_titles)
 
 subplot_tiltes = []
 for title in metric_titles:
     for i in range(testcase_no):
         subplot_tiltes.append(title)
-
 
 
 fig = make_subplots(
@@ -148,7 +155,6 @@ for num, pod_no in enumerate(pods_no):
     for log in logs:
         pod_to_resource = add_inflight(log, pod_to_resource)
     pod_to_resource = format_time(pod_to_resource)
-    print((num + 1) == len(pods_no))
     add_trace_to_fig(fig, pod_to_resource, num + 1, (num + 1) == len(pods_no))
 
 # fig.update_layout(height=1000, width=1500, title_text=f"{TASK_NAME}", showlegend=False)
@@ -156,9 +162,17 @@ fig.update_layout(height=1000, width=1500, title_text=f"{TASK_NAME}")
 
 
 for i in range(testcase_no):
-    offset = (metric_no-1)*testcase_no + i + 1
+    offset = (metric_no - 1) * testcase_no + i + 1
     fig["layout"][f"xaxis{offset}"]["title"] = "Time (second)"
-for i, unit in enumerate(["CPU Load (%)", "Memory Load (%)", "Block In (MB)", "Block out (MB)", "Number of Inflight Request"]):
+for i, unit in enumerate(
+    [
+        "CPU Load (%)",
+        "Memory Load (%)",
+        "Block In (MB)",
+        "Block out (MB)",
+        "Number of Inflight Request",
+    ]
+):
     offset = 1 + i * testcase_no
     fig["layout"][f"yaxis{offset}"]["title"] = unit
 
