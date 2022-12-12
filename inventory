@@ -5,8 +5,8 @@ appName=fast-fourier-transform
 request_pattern=pattern1
 
 [cloudmaster:vars]
-docker_username=yssamtu
-docker_password=Sam88213100139
+docker_username=username
+docker_password=password
 
 [cloudmaster]
 cloud_controller_ds2022-lab1-2 ansible_connection=ssh ansible_host=192.168.136.2 ansible_user=cloud_controller_ds2022-lab1-2
