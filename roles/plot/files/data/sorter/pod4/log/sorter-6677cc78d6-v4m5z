@@ -1,0 +1,39 @@
+2022/12/12 19:09:53 Version: 0.18.1	SHA: b46be5a4d9d9d55da9c4b1e50d86346e0afccf2d
+2022/12/12 19:09:53 Timeouts: read: 0s, write: 0s hard: 0s.
+2022/12/12 19:09:53 Listening on port: 8080
+2022/12/12 19:09:53 Writing lock-file to: /tmp/.lock
+2022/12/12 19:09:53 Metrics listening on port: 8081
+2022/12/12 19:10:39 Forking fprocess.
+2022/12/12 19:10:40 Wrote 56 Bytes - Duration: 1.076481 seconds
+2022/12/12 19:10:42 Forking fprocess.
+2022/12/12 19:10:43 Forking fprocess.
+2022/12/12 19:10:43 Wrote 56 Bytes - Duration: 1.084944 seconds
+2022/12/12 19:10:44 Forking fprocess.
+2022/12/12 19:10:44 Wrote 56 Bytes - Duration: 1.085086 seconds
+2022/12/12 19:10:45 Wrote 56 Bytes - Duration: 1.138884 seconds
+2022/12/12 19:10:47 Forking fprocess.
+2022/12/12 19:10:48 Forking fprocess.
+2022/12/12 19:10:48 Wrote 56 Bytes - Duration: 1.077660 seconds
+2022/12/12 19:10:49 Wrote 56 Bytes - Duration: 1.037684 seconds
+2022/12/12 19:10:54 Forking fprocess.
+2022/12/12 19:10:55 Wrote 56 Bytes - Duration: 0.987927 seconds
+2022/12/12 19:10:55 Forking fprocess.
+2022/12/12 19:10:56 Wrote 56 Bytes - Duration: 1.088714 seconds
+2022/12/12 19:10:59 Forking fprocess.
+2022/12/12 19:11:00 Wrote 56 Bytes - Duration: 0.985594 seconds
+2022/12/12 19:11:08 Forking fprocess.
+2022/12/12 19:11:09 Wrote 56 Bytes - Duration: 1.123822 seconds
+2022/12/12 19:11:10 Forking fprocess.
+2022/12/12 19:11:11 Forking fprocess.
+2022/12/12 19:11:11 Wrote 56 Bytes - Duration: 1.092447 seconds
+2022/12/12 19:11:12 Wrote 56 Bytes - Duration: 1.009311 seconds
+2022/12/12 19:11:13 Forking fprocess.
+2022/12/12 19:11:14 Wrote 56 Bytes - Duration: 1.003450 seconds
+2022/12/12 19:11:21 Forking fprocess.
+2022/12/12 19:11:22 Wrote 56 Bytes - Duration: 1.149752 seconds
+2022/12/12 19:11:26 Forking fprocess.
+2022/12/12 19:11:27 Wrote 56 Bytes - Duration: 1.012481 seconds
+2022/12/12 19:11:29 Forking fprocess.
+2022/12/12 19:11:30 Wrote 56 Bytes - Duration: 1.092147 seconds
+2022/12/12 19:11:34 Forking fprocess.
+2022/12/12 19:11:35 Wrote 56 Bytes - Duration: 1.012958 seconds
