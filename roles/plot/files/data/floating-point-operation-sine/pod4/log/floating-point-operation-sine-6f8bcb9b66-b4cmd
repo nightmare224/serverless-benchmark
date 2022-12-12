@@ -1,0 +1,45 @@
+2022/12/12 12:44:13 Version: 0.2.1	SHA: cd8dc9f4e98049150d8079a74a18cd5a2e311aeb
+2022/12/12 12:44:13 Timeouts: read: 0s write: 0s hard: 0s health: 0s.
+2022/12/12 12:44:13 Listening on port: 8080
+2022/12/12 12:44:13 Metrics listening on port: 8081
+2022/12/12 12:44:13 Writing lock-file to: /tmp/.lock
+2022/12/12 12:45:05 Forking fprocess.
+2022/12/12 12:45:07 Forking fprocess.
+2022/12/12 12:45:09 Wrote 56 Bytes - Duration: 4.270204s
+2022/12/12 12:45:11 Forking fprocess.
+2022/12/12 12:45:11 Wrote 56 Bytes - Duration: 4.132623s
+2022/12/12 12:45:15 Wrote 56 Bytes - Duration: 4.054708s
+2022/12/12 12:45:15 Forking fprocess.
+2022/12/12 12:45:19 Forking fprocess.
+2022/12/12 12:45:19 Wrote 56 Bytes - Duration: 4.204456s
+2022/12/12 12:45:20 Forking fprocess.
+2022/12/12 12:45:23 Wrote 56 Bytes - Duration: 4.141744s
+2022/12/12 12:45:24 Forking fprocess.
+2022/12/12 12:45:24 Wrote 56 Bytes - Duration: 4.206265s
+2022/12/12 12:45:28 Wrote 56 Bytes - Duration: 4.013889s
+2022/12/12 12:45:28 Forking fprocess.
+2022/12/12 12:45:32 Wrote 56 Bytes - Duration: 4.140766s
+2022/12/12 12:45:39 Forking fprocess.
+2022/12/12 12:45:40 Forking fprocess.
+2022/12/12 12:45:42 Forking fprocess.
+2022/12/12 12:45:43 Wrote 56 Bytes - Duration: 4.122569s
+2022/12/12 12:45:44 Forking fprocess.
+2022/12/12 12:45:44 Wrote 56 Bytes - Duration: 4.218926s
+2022/12/12 12:45:46 Wrote 56 Bytes - Duration: 4.349012s
+2022/12/12 12:45:48 Forking fprocess.
+2022/12/12 12:45:48 Wrote 56 Bytes - Duration: 4.071993s
+2022/12/12 12:45:50 Forking fprocess.
+2022/12/12 12:45:51 Forking fprocess.
+2022/12/12 12:45:52 Forking fprocess.
+2022/12/12 12:45:52 Wrote 56 Bytes - Duration: 4.060129s
+2022/12/12 12:45:54 Forking fprocess.
+2022/12/12 12:45:54 Wrote 56 Bytes - Duration: 4.195575s
+2022/12/12 12:45:55 Forking fprocess.
+2022/12/12 12:45:55 Wrote 56 Bytes - Duration: 4.316741s
+2022/12/12 12:45:56 Wrote 56 Bytes - Duration: 4.091092s
+2022/12/12 12:45:57 Forking fprocess.
+2022/12/12 12:45:58 Forking fprocess.
+2022/12/12 12:45:58 Wrote 56 Bytes - Duration: 4.137811s
+2022/12/12 12:45:59 Wrote 56 Bytes - Duration: 4.213549s
+2022/12/12 12:46:01 Wrote 56 Bytes - Duration: 4.349509s
+2022/12/12 12:46:02 Wrote 56 Bytes - Duration: 4.062112s
