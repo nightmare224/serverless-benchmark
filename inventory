@@ -1,12 +1,12 @@
 [all:vars]
 ansible_ssh_private_key_file=/home/ds2022-lab1-2/.ssh/id_rsa_benchmark
-pod_no=6
+pod_no=2
 appName=fast-fourier-transform
 request_pattern=pattern2
 
 [cloudmaster:vars]
-docker_username=yssamtu
-docker_password=Sam88213100139
+docker_username=username
+docker_password=password
 
 [cloudmaster]
 cloud_controller_ds2022-lab1-2 ansible_connection=ssh ansible_host=192.168.136.2 ansible_user=cloud_controller_ds2022-lab1-2
