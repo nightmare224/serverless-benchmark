@@ -1,0 +1,41 @@
+2022/12/12 13:21:49 Version: 0.2.1	SHA: cd8dc9f4e98049150d8079a74a18cd5a2e311aeb
+2022/12/12 13:21:49 Timeouts: read: 0s write: 0s hard: 0s health: 0s.
+2022/12/12 13:21:49 Listening on port: 8080
+2022/12/12 13:21:49 Writing lock-file to: /tmp/.lock
+2022/12/12 13:21:49 Metrics listening on port: 8081
+2022/12/12 13:22:40 Forking fprocess.
+2022/12/12 13:22:41 Wrote 114 Bytes - Duration: 1.063240s
+2022/12/12 13:22:42 Forking fprocess.
+2022/12/12 13:22:43 Wrote 114 Bytes - Duration: 1.258981s
+2022/12/12 13:22:46 Forking fprocess.
+2022/12/12 13:22:47 Wrote 114 Bytes - Duration: 0.960620s
+2022/12/12 13:22:52 Forking fprocess.
+2022/12/12 13:22:53 Wrote 114 Bytes - Duration: 0.970301s
+2022/12/12 13:22:53 Forking fprocess.
+2022/12/12 13:22:54 Forking fprocess.
+2022/12/12 13:22:54 Wrote 114 Bytes - Duration: 1.055760s
+2022/12/12 13:22:55 Wrote 114 Bytes - Duration: 1.043694s
+2022/12/12 13:22:56 Forking fprocess.
+2022/12/12 13:22:57 Wrote 114 Bytes - Duration: 1.035947s
+2022/12/12 13:23:00 Forking fprocess.
+2022/12/12 13:23:01 Wrote 114 Bytes - Duration: 1.009855s
+2022/12/12 13:23:05 Forking fprocess.
+2022/12/12 13:23:06 Wrote 114 Bytes - Duration: 1.049672s
+2022/12/12 13:23:08 Forking fprocess.
+2022/12/12 13:23:09 Forking fprocess.
+2022/12/12 13:23:09 Wrote 114 Bytes - Duration: 1.030890s
+2022/12/12 13:23:10 Wrote 114 Bytes - Duration: 1.280331s
+2022/12/12 13:23:13 Forking fprocess.
+2022/12/12 13:23:14 Wrote 114 Bytes - Duration: 1.054831s
+2022/12/12 13:23:15 Forking fprocess.
+2022/12/12 13:23:16 Wrote 114 Bytes - Duration: 0.976837s
+2022/12/12 13:23:16 Forking fprocess.
+2022/12/12 13:23:17 Wrote 114 Bytes - Duration: 1.158834s
+2022/12/12 13:23:18 Forking fprocess.
+2022/12/12 13:23:19 Wrote 114 Bytes - Duration: 0.988861s
+2022/12/12 13:23:19 Forking fprocess.
+2022/12/12 13:23:20 Wrote 114 Bytes - Duration: 1.027383s
+2022/12/12 13:23:28 Forking fprocess.
+2022/12/12 13:23:29 Wrote 114 Bytes - Duration: 1.275697s
+2022/12/12 13:23:31 Forking fprocess.
+2022/12/12 13:23:32 Wrote 114 Bytes - Duration: 0.977972s
