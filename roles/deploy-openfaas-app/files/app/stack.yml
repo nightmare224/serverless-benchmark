@@ -13,6 +13,7 @@ functions:
       exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
+      com.openfaas.scale.factor: 0
   sorter:
     lang: dockerfile
     handler: ./sorter
@@ -23,6 +24,7 @@ functions:
         exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
+      com.openfaas.scale.factor: 0
   dd-cmd: 
     lang: python3-debian
     handler: ./dd-cmd
@@ -33,6 +35,7 @@ functions:
       exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
+      com.openfaas.scale.factor: 0
   matrix-multiplication-low:
     lang: python3-debian
     handler: ./matrix-multiplication-low
@@ -43,6 +46,7 @@ functions:
       exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
+      com.openfaas.scale.factor: 0
   matrix-multiplication-high:
     lang: python3-debian
     handler: ./matrix-multiplication-high
@@ -53,6 +57,7 @@ functions:
       exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
+      com.openfaas.scale.factor: 0
   fast-fourier-transform:
     lang: python3-debian
     handler: ./fast-fourier-transform
@@ -63,3 +68,4 @@ functions:
       exec_timeout: 0
     labels:
       com.openfaas.scale.min: 1
+      com.openfaas.scale.factor: 0
