@@ -66,7 +66,7 @@ for tc_no, testcase in enumerate(testcase_list):
         col = tc_no + 1
         resp_time_list = get_response_time_from_file(filename)
         y = resp_time_list
-        x = [f"testcase-{pod_no}"] * len(resp_time_list)
+        x = [f"pod{pod_no}"] * len(resp_time_list)
         pod_name = f"pod{pod_no}"
         fig.add_trace(
             go.Box(
@@ -86,14 +86,20 @@ for tc_no, testcase in enumerate(testcase_list):
 
 for testcase in testcase_list:
     filename_list = data.get_logs_name(testcase)
+    testcase_no = len(filename_list)
+    name = ""
+    for i in range(testcase_no):
+        name += f"pod{i}, "
+    name = name[:-2]
     resp_time_list = get_response_time_from_filelist(filename_list)
     fig.add_trace(
         go.Box(
             y=resp_time_list,
-            x=[testcase] * len(resp_time_list),
-            name=testcase,
+            x=[name] * len(resp_time_list),
+            name=testcase_no,
             boxmean='sd',
-            marker_color="deepskyblue",
+            # marker_color="deepskyblue",
+            marker_color=color_list[-1],
             # width=0.5
             showlegend=False
         ),
@@ -102,7 +108,7 @@ for testcase in testcase_list:
     )
 
 # fig.update_xaxes(visible=False)
-fig.update_xaxes(showticklabels=False)
+# fig.update_xaxes(showticklabels=False)
 fig["layout"][f"yaxis1"]["title"] = "Response Time (second)"
 fig["layout"][f"yaxis4"]["title"] = "Response Time (second)"
 fig.update_layout(height=800, width=1300)
