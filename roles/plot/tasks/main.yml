@@ -1,10 +1,10 @@
 ---
 - name: Prepare plot data
   shell: |
-    cd {{ role_path }}/files/data/{{ appName }}/pod{{ pod_no}}/log/
+    cd {{ role_path }}/files/data/{{ plot_subpath }}/{{ appName }}/r{{ request_concurrent }}pod{{ pod_no}}/log/
     tar -xf log-{{ appName }}.tar && rm -f log-{{ appName }}.tar
-    cd {{ role_path }}/files/data/{{ appName }}/pod{{ pod_no}}/resource
+    cd {{ role_path }}/files/data/{{ plot_subpath }}/{{ appName }}/r{{ request_concurrent }}pod{{ pod_no}}/resource
     cat {{ appName }}* | awk 'BEGIN{FS="|"} NF==5{print}' | sort | uniq > out
-    rm {{ role_path }}/files/data/{{ appName }}/pod{{ pod_no}}/resource/{{ appName }}*
+    rm {{ role_path }}/files/data/{{ plot_subpath }}/{{ appName }}/r{{ request_concurrent }}pod{{ pod_no }}/resource/{{ appName }}*
   args:
     executable: /bin/bash

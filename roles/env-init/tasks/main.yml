@@ -1,12 +1,12 @@
 ---
 - name: Wait for openfaas up
   command: kubectl wait -n openfaas --all pod --for=condition=Ready --timeout=300s
-  
+
 - name: OpenFaas port forward
-  shell: kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+  shell: nohup kubectl port-forward -n openfaas svc/gateway 8080:8080 &
   args:
     executable: /bin/bash
-  async: 1200
+  async: 2592000
   poll: 0 # never hup
 
 - name: Login openfaas
@@ -18,6 +18,8 @@
 
 - name: Login docker
   shell: docker login -u {{ docker_username }} -p {{ docker_password }}
+  register: docker_login
+  failed_when: docker_login.rc == 1
 
 - name: Install hey packet
   become: yes
