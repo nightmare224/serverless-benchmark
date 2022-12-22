@@ -1,0 +1,205 @@
+2022/12/12 21:13:09 Version: 0.2.1	SHA: cd8dc9f4e98049150d8079a74a18cd5a2e311aeb
+2022/12/12 21:13:09 Timeouts: read: 0s write: 0s hard: 0s health: 0s.
+2022/12/12 21:13:09 Listening on port: 8080
+2022/12/12 21:13:09 Writing lock-file to: /tmp/.lock
+2022/12/12 21:13:09 Metrics listening on port: 8081
+2022/12/12 21:14:03 Forking fprocess.
+2022/12/12 21:14:03 Forking fprocess.
+2022/12/12 21:14:03 Forking fprocess.
+2022/12/12 21:15:22 Wrote 365 Bytes - Duration: 79.156854s
+2022/12/12 21:15:23 Wrote 365 Bytes - Duration: 80.444727s
+2022/12/12 21:15:23 Wrote 364 Bytes - Duration: 80.621073s
+2022/12/12 21:16:15 Forking fprocess.
+2022/12/12 21:16:15 Forking fprocess.
+2022/12/12 21:16:15 Forking fprocess.
+2022/12/12 21:16:15 Forking fprocess.
+2022/12/12 21:17:48 Wrote 364 Bytes - Duration: 93.313083s
+2022/12/12 21:17:48 Wrote 365 Bytes - Duration: 93.552222s
+2022/12/12 21:17:49 Wrote 365 Bytes - Duration: 93.882813s
+2022/12/12 21:17:49 Wrote 365 Bytes - Duration: 94.184009s
+2022/12/12 21:18:24 Forking fprocess.
+2022/12/12 21:18:24 Forking fprocess.
+2022/12/12 21:18:24 Forking fprocess.
+2022/12/12 21:18:24 Forking fprocess.
+2022/12/12 21:20:01 Wrote 365 Bytes - Duration: 96.965732s
+2022/12/12 21:20:02 Wrote 365 Bytes - Duration: 97.547084s
+2022/12/12 21:20:02 Wrote 365 Bytes - Duration: 98.209257s
+2022/12/12 21:20:03 Wrote 365 Bytes - Duration: 98.518106s
+2022/12/12 21:20:37 Forking fprocess.
+2022/12/12 21:20:37 Forking fprocess.
+2022/12/12 21:20:37 Forking fprocess.
+2022/12/12 21:20:37 Forking fprocess.
+2022/12/12 21:20:37 Forking fprocess.
+2022/12/12 21:20:37 Forking fprocess.
+2022/12/12 21:22:31 Wrote 366 Bytes - Duration: 113.922670s
+2022/12/12 21:22:31 Wrote 366 Bytes - Duration: 113.900044s
+2022/12/12 21:22:31 Wrote 366 Bytes - Duration: 114.173963s
+2022/12/12 21:22:31 Wrote 366 Bytes - Duration: 114.225138s
+2022/12/12 21:22:31 Wrote 366 Bytes - Duration: 114.218826s
+2022/12/12 21:22:31 Wrote 366 Bytes - Duration: 114.346133s
+2022/12/12 21:22:45 Forking fprocess.
+2022/12/12 21:22:45 Forking fprocess.
+2022/12/12 21:22:45 Forking fprocess.
+2022/12/12 21:22:45 Forking fprocess.
+2022/12/12 21:24:20 Wrote 365 Bytes - Duration: 95.249222s
+2022/12/12 21:24:21 Wrote 365 Bytes - Duration: 95.716614s
+2022/12/12 21:24:21 Wrote 364 Bytes - Duration: 96.043629s
+2022/12/12 21:24:22 Wrote 365 Bytes - Duration: 96.436281s
+2022/12/12 21:24:57 Forking fprocess.
+2022/12/12 21:24:57 Forking fprocess.
+2022/12/12 21:24:57 Forking fprocess.
+2022/12/12 21:26:17 Wrote 365 Bytes - Duration: 80.205553s
+2022/12/12 21:26:17 Wrote 365 Bytes - Duration: 80.561075s
+2022/12/12 21:26:17 Wrote 365 Bytes - Duration: 80.575932s
+2022/12/12 21:27:13 Forking fprocess.
+2022/12/12 21:27:13 Forking fprocess.
+2022/12/12 21:27:13 Forking fprocess.
+2022/12/12 21:27:13 Forking fprocess.
+2022/12/12 21:28:46 Wrote 365 Bytes - Duration: 92.941684s
+2022/12/12 21:28:46 Wrote 365 Bytes - Duration: 93.155749s
+2022/12/12 21:28:46 Wrote 365 Bytes - Duration: 93.589636s
+2022/12/12 21:28:47 Wrote 365 Bytes - Duration: 93.613433s
+2022/12/12 21:29:27 Forking fprocess.
+2022/12/12 21:29:28 Forking fprocess.
+2022/12/12 21:29:28 Forking fprocess.
+2022/12/12 21:29:28 Forking fprocess.
+2022/12/12 21:29:28 Forking fprocess.
+2022/12/12 21:31:04 Wrote 365 Bytes - Duration: 96.072694s
+2022/12/12 21:31:04 Wrote 365 Bytes - Duration: 96.108107s
+2022/12/12 21:31:04 Wrote 365 Bytes - Duration: 96.228840s
+2022/12/12 21:31:04 Wrote 364 Bytes - Duration: 96.286009s
+2022/12/12 21:31:04 Wrote 365 Bytes - Duration: 96.249109s
+2022/12/12 21:31:28 Forking fprocess.
+2022/12/12 21:31:39 Wrote 366 Bytes - Duration: 10.916138s
+2022/12/12 21:31:39 Forking fprocess.
+2022/12/12 21:31:39 Forking fprocess.
+2022/12/12 21:31:39 Forking fprocess.
+2022/12/12 21:31:39 Forking fprocess.
+2022/12/12 21:31:39 Forking fprocess.
+2022/12/12 21:31:39 Forking fprocess.
+2022/12/12 21:31:39 Forking fprocess.
+2022/12/12 21:33:38 Wrote 365 Bytes - Duration: 119.063878s
+2022/12/12 21:33:38 Wrote 366 Bytes - Duration: 119.216559s
+2022/12/12 21:33:38 Wrote 366 Bytes - Duration: 119.299905s
+2022/12/12 21:33:38 Wrote 366 Bytes - Duration: 119.464455s
+2022/12/12 21:33:39 Wrote 366 Bytes - Duration: 119.824436s
+2022/12/12 21:33:39 Wrote 366 Bytes - Duration: 120.059616s
+2022/12/12 21:33:39 Wrote 366 Bytes - Duration: 120.081514s
+2022/12/12 21:33:53 Forking fprocess.
+2022/12/12 21:33:53 Forking fprocess.
+2022/12/12 21:33:53 Forking fprocess.
+2022/12/12 21:33:53 Forking fprocess.
+2022/12/12 21:33:53 Forking fprocess.
+2022/12/12 21:33:53 Forking fprocess.
+2022/12/12 21:33:53 Forking fprocess.
+2022/12/12 21:35:51 Wrote 365 Bytes - Duration: 117.429667s
+2022/12/12 21:35:51 Wrote 364 Bytes - Duration: 117.398466s
+2022/12/12 21:35:51 Wrote 366 Bytes - Duration: 117.593662s
+2022/12/12 21:35:51 Wrote 365 Bytes - Duration: 117.676414s
+2022/12/12 21:35:51 Wrote 366 Bytes - Duration: 117.919505s
+2022/12/12 21:35:51 Wrote 365 Bytes - Duration: 118.067721s
+2022/12/12 21:35:51 Wrote 366 Bytes - Duration: 118.054474s
+2022/12/12 21:36:05 Forking fprocess.
+2022/12/12 21:36:05 Forking fprocess.
+2022/12/12 21:36:05 Forking fprocess.
+2022/12/12 21:36:05 Forking fprocess.
+2022/12/12 21:36:05 Forking fprocess.
+2022/12/12 21:36:05 Forking fprocess.
+2022/12/12 21:36:05 Forking fprocess.
+2022/12/12 21:38:01 Wrote 365 Bytes - Duration: 115.457043s
+2022/12/12 21:38:01 Wrote 365 Bytes - Duration: 115.458846s
+2022/12/12 21:38:01 Wrote 366 Bytes - Duration: 115.441139s
+2022/12/12 21:38:01 Wrote 366 Bytes - Duration: 115.474204s
+2022/12/12 21:38:01 Wrote 366 Bytes - Duration: 115.810630s
+2022/12/12 21:38:01 Wrote 366 Bytes - Duration: 115.885684s
+2022/12/12 21:38:01 Wrote 366 Bytes - Duration: 116.129497s
+2022/12/12 21:38:05 Forking fprocess.
+2022/12/12 21:38:15 Wrote 366 Bytes - Duration: 10.712638s
+2022/12/12 21:38:15 Forking fprocess.
+2022/12/12 21:38:15 Forking fprocess.
+2022/12/12 21:38:15 Forking fprocess.
+2022/12/12 21:38:15 Forking fprocess.
+2022/12/12 21:39:52 Wrote 365 Bytes - Duration: 96.818433s
+2022/12/12 21:39:53 Wrote 365 Bytes - Duration: 97.892970s
+2022/12/12 21:39:54 Wrote 365 Bytes - Duration: 98.696347s
+2022/12/12 21:39:54 Wrote 365 Bytes - Duration: 98.884322s
+2022/12/12 21:40:15 Forking fprocess.
+2022/12/12 21:40:26 Wrote 366 Bytes - Duration: 10.971676s
+2022/12/12 21:40:26 Forking fprocess.
+2022/12/12 21:40:26 Forking fprocess.
+2022/12/12 21:40:26 Forking fprocess.
+2022/12/12 21:40:26 Forking fprocess.
+2022/12/12 21:40:26 Forking fprocess.
+2022/12/12 21:42:18 Wrote 366 Bytes - Duration: 112.058398s
+2022/12/12 21:42:18 Wrote 366 Bytes - Duration: 112.418012s
+2022/12/12 21:42:18 Wrote 366 Bytes - Duration: 112.387693s
+2022/12/12 21:42:19 Wrote 366 Bytes - Duration: 113.086667s
+2022/12/12 21:42:19 Wrote 366 Bytes - Duration: 113.235045s
+2022/12/12 21:42:33 Forking fprocess.
+2022/12/12 21:42:33 Forking fprocess.
+2022/12/12 21:42:33 Forking fprocess.
+2022/12/12 21:42:33 Forking fprocess.
+2022/12/12 21:42:33 Forking fprocess.
+2022/12/12 21:42:33 Forking fprocess.
+2022/12/12 21:42:34 Forking fprocess.
+2022/12/12 21:42:34 Forking fprocess.
+2022/12/12 21:44:32 Wrote 366 Bytes - Duration: 118.397307s
+2022/12/12 21:44:32 Wrote 366 Bytes - Duration: 118.942373s
+2022/12/12 21:44:33 Wrote 366 Bytes - Duration: 119.074760s
+2022/12/12 21:44:33 Wrote 366 Bytes - Duration: 119.290808s
+2022/12/12 21:44:33 Wrote 366 Bytes - Duration: 119.502520s
+2022/12/12 21:44:33 Wrote 366 Bytes - Duration: 119.633547s
+2022/12/12 21:44:33 Wrote 366 Bytes - Duration: 119.627114s
+2022/12/12 21:44:33 Wrote 366 Bytes - Duration: 119.662262s
+2022/12/12 21:44:47 Forking fprocess.
+2022/12/12 21:44:47 Forking fprocess.
+2022/12/12 21:44:47 Forking fprocess.
+2022/12/12 21:44:47 Forking fprocess.
+2022/12/12 21:44:47 Forking fprocess.
+2022/12/12 21:46:25 Wrote 364 Bytes - Duration: 98.124488s
+2022/12/12 21:46:26 Wrote 364 Bytes - Duration: 98.397470s
+2022/12/12 21:46:26 Wrote 365 Bytes - Duration: 98.731221s
+2022/12/12 21:46:26 Wrote 364 Bytes - Duration: 99.206100s
+2022/12/12 21:46:27 Wrote 237 Bytes - Duration: 99.416044s
+2022/12/12 21:47:02 Forking fprocess.
+2022/12/12 21:47:02 Forking fprocess.
+2022/12/12 21:48:00 Wrote 364 Bytes - Duration: 58.768088s
+2022/12/12 21:48:02 Wrote 365 Bytes - Duration: 59.861174s
+2022/12/12 21:49:18 Forking fprocess.
+2022/12/12 21:49:18 Forking fprocess.
+2022/12/12 21:49:18 Forking fprocess.
+2022/12/12 21:49:18 Forking fprocess.
+2022/12/12 21:50:53 Wrote 365 Bytes - Duration: 95.550043s
+2022/12/12 21:50:54 Wrote 237 Bytes - Duration: 96.513959s
+2022/12/12 21:50:54 Wrote 364 Bytes - Duration: 96.729777s
+2022/12/12 21:50:54 Wrote 365 Bytes - Duration: 96.779839s
+2022/12/12 21:51:30 Forking fprocess.
+2022/12/12 21:51:30 Forking fprocess.
+2022/12/12 21:51:30 Forking fprocess.
+2022/12/12 21:52:48 Wrote 364 Bytes - Duration: 78.315051s
+2022/12/12 21:52:48 Wrote 365 Bytes - Duration: 78.337336s
+2022/12/12 21:52:49 Wrote 365 Bytes - Duration: 79.132522s
+2022/12/12 21:53:40 Forking fprocess.
+2022/12/12 21:53:40 Forking fprocess.
+2022/12/12 21:53:40 Forking fprocess.
+2022/12/12 21:53:40 Forking fprocess.
+2022/12/12 21:55:08 Wrote 365 Bytes - Duration: 87.663120s
+2022/12/12 21:55:08 Wrote 365 Bytes - Duration: 87.792410s
+2022/12/12 21:55:09 Wrote 365 Bytes - Duration: 88.221290s
+2022/12/12 21:55:09 Wrote 365 Bytes - Duration: 88.581937s
+2022/12/12 21:58:10 Forking fprocess.
+2022/12/12 21:58:10 Forking fprocess.
+2022/12/12 21:58:10 Forking fprocess.
+2022/12/12 21:58:10 Forking fprocess.
+2022/12/12 21:58:10 Forking fprocess.
+2022/12/12 21:58:10 Forking fprocess.
+2022/12/12 21:58:10 Forking fprocess.
+2022/12/12 21:58:10 Forking fprocess.
+2022/12/12 22:00:11 Wrote 366 Bytes - Duration: 120.177296s
+2022/12/12 22:00:11 Wrote 365 Bytes - Duration: 120.433109s
+2022/12/12 22:00:11 Wrote 366 Bytes - Duration: 120.604475s
+2022/12/12 22:00:11 Wrote 366 Bytes - Duration: 120.835230s
+2022/12/12 22:00:11 Wrote 366 Bytes - Duration: 121.072664s
+2022/12/12 22:00:12 Wrote 237 Bytes - Duration: 121.130570s
+2022/12/12 22:00:12 Wrote 366 Bytes - Duration: 121.290056s
+2022/12/12 22:00:12 Wrote 366 Bytes - Duration: 121.322347s
