@@ -3,8 +3,8 @@
   shell: |
     mkdir -p {{ role_path }}/files/result
     cd {{ role_path }}/../plot/files/data/
-    rm -rf {{ appName }}/pod{{ pod_no }}
-    mkdir -p {{ appName }}/pod{{ pod_no }}/resource
-    mkdir -p {{ appName }}/pod{{ pod_no }}/log
+    rm -rf {{ plot_subpath }}/{{ appName }}/r{{ request_concurrent }}pod{{ pod_no }}
+    mkdir -p {{ plot_subpath }}/{{ appName }}/r{{ request_concurrent }}pod{{ pod_no }}/resource
+    mkdir -p {{ plot_subpath }}/{{ appName }}/r{{ request_concurrent }}pod{{ pod_no }}/log
   args:
     executable: /bin/bash

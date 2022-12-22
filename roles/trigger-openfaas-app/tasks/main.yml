@@ -6,5 +6,5 @@
 
 
 - name: Trigger openfaas application
-  shell: bash /home/{{ ansible_user }}/{{ request_pattern }}.sh {{ appName }}
+  shell: bash /home/{{ ansible_user }}/{{ request_pattern }}.sh {{ appName }} {{ request_concurrent }}
   # shell: hey -t 0 -z 1m -c 20 -q 5 http://127.0.0.1:8080/function/{{ appName }} > /tmp/out

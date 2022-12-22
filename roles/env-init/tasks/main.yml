@@ -1,4 +1,7 @@
 ---
+- name: Wait for openfaas up
+  command: kubectl wait -n openfaas --all pod --for=condition=Ready --timeout=300s
+  
 - name: OpenFaas port forward
   shell: kubectl port-forward -n openfaas svc/gateway 8080:8080 &
   args:

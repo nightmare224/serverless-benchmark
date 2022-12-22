@@ -16,7 +16,7 @@
 - name: Send back to localhost
   fetch:
     src: log-{{ appName }}.tar
-    dest: "{{ role_path }}/../plot/files/data/{{ appName }}/pod{{ pod_no }}/log/"
+    dest: "{{ role_path }}/../plot/files/data/{{ plot_subpath }}/{{ appName }}/r{{ request_concurrent }}pod{{ pod_no }}/log/"
     flat: yes
 
 - name: remove tar file
