@@ -97,6 +97,7 @@ def format_time(pod_to_resource):
 
 
 def add_trace_to_fig(fig, pod_to_resource, col_no, last):
+    # print(pod_to_resource, col_no)
     color_list = px.colors.qualitative.Bold
     col = col_no
     for pod_no, pod_name in enumerate(pod_to_resource.keys()):
@@ -120,31 +121,32 @@ def add_trace_to_fig(fig, pod_to_resource, col_no, last):
             row += 1
 
 
-data = files(TASK_NAME)
+data = files(TASK_NAME, "cloud", "1")
 pods_no = sorted(data.get_pods_no())
 testcase_no = len(pods_no)
 metric_titles = [
-    "CPU Load",
+    "Parallel Requests",
+    # "CPU Load",
     "Memory Load",
     # "Block I/O (In)",
     # "Block I/O (Out)",
-    "Inflight Request",
+    # "Inflight Request",
 ]
 metric_no = len(metric_titles)
 
 subplot_tiltes = []
 for title in metric_titles:
     for i in range(testcase_no):
-        subplot_tiltes.append(title)
-
+        subplot_tiltes.append(f"{i+2} {title}")
+    break
 
 fig = make_subplots(
     rows=metric_no,
     cols=len(pods_no),
     shared_xaxes=True,
     shared_yaxes=True,
-    vertical_spacing=0.05,
-    horizontal_spacing=0.02,
+    vertical_spacing=0.02,
+    horizontal_spacing=0.01,
     subplot_titles=subplot_tiltes,
 )
 for num, pod_no in enumerate(pods_no):
@@ -155,10 +157,11 @@ for num, pod_no in enumerate(pods_no):
     for log in logs:
         pod_to_resource = add_inflight(log, pod_to_resource)
     pod_to_resource = format_time(pod_to_resource)
+    # print(num, pods_no)
     add_trace_to_fig(fig, pod_to_resource, num + 1, (num + 1) == len(pods_no))
 
 # fig.update_layout(height=1000, width=1500, title_text=f"{TASK_NAME}", showlegend=False)
-fig.update_layout(height=1000, width=3500, title_text=f"{TASK_NAME}")
+fig.update_layout(height=700, width=3500, title_text=f"{TASK_NAME}")
 
 
 for i in range(testcase_no):

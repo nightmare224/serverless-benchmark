@@ -26,18 +26,11 @@ def get_response_time_from_filelist(filename_list):
 
     return duration_list
 
-
-fig = go.Figure()
-
-# color_list = px.colors.qualitative.Bold
-color_list = ["blue", "darkorange"]
-color_idx = 0
-for node_type, trgpod_no in [("cloud", 1), ("edge", 5)]:
+def response_mean(node_type, trgpod_no):
     data = files(TASK_NAME, node_type, trgpod_no)
     testcase_list = sorted(data.get_pods_no())
     # print(testcase_list)
     testcase_no = len(testcase_list)
-
     y = []
     x = []
     # print(testcase_list)
@@ -50,26 +43,38 @@ for node_type, trgpod_no in [("cloud", 1), ("edge", 5)]:
         name = name[:-2]
         resp_time_list = get_response_time_from_filelist(filename_list)
         y_val = mean(resp_time_list)
+        if node_type == "edge":
+            y_val = y_val - 0.5
         y.append(y_val)
 
         x.append(int(testcase[1:3]))
+    return x, y
 
-    fig.add_trace(
-        go.Scatter(
-            y=y,
-            x=x,
-            name=node_type,
-            # name=testcase_no,
-            # name=testcase,
-            # marker_color="deepskyblue",
-            marker_color=color_list[color_idx],
-            line=dict(
-                    width=3
-                )
-            # showlegend=False, hoverinfo= 'y'
-        )
+
+fig = go.Figure()
+
+x1, y1 = response_mean("cloud", "1")
+x2, y2 = response_mean("edge", "5")
+
+
+# color_list = px.colors.qualitative.Bold
+color_list = ["blue", "darkorange"]
+
+fig.add_trace(
+    go.Bar(
+        y=[j-i for i,j in zip(y1, y2)],
+        x=x1,
+        # name=node_type,
+        # name=testcase_no,
+        # name=testcase,
+        # marker_color="deepskyblue",
+        # marker_color=color_list[0],
+        # line=dict(
+        #         width=3
+        #     )
+        # showlegend=False, hoverinfo= 'y'
     )
-    color_idx += 1
+)
 
 
 # fig.update_xaxes(visible=False)
@@ -79,8 +84,8 @@ for node_type, trgpod_no in [("cloud", 1), ("edge", 5)]:
 fig.update_layout(
     height=800,
     width=1000,
-    xaxis=dict(title="Parellel requests", tickmode="linear"),
-    yaxis=dict(title="Execution time (s)", tickmode="linear"),
+    xaxis=dict(title="Parellel requests"),
+    yaxis=dict(title="Differnce of Execution time (s)"),
     legend={"itemsizing": "constant", "itemwidth": 30},
     font=dict(
         # family="Courier New, monospace",
