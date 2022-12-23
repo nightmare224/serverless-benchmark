@@ -11,7 +11,7 @@ from config import *
 
 task_name = input(f"Task Name (default task is {TASK_NAME}, press ENTER to skip): ")
 TASK_NAME = TASK_NAME if task_name == "" else task_name
-OUTPUT = f"{os.getcwd()}/result/{TASK_NAME}-resource.html"
+OUTPUT = f"{os.getcwd()}/result/pattern1/{TASK_NAME}-resource.html"
 
 
 def to_MB(data):
@@ -37,7 +37,7 @@ def get_pod_to_resource(filename):
             try:
                 time = datetime.strptime(rsrc[0], "%Y/%m/%d %H:%M:%S ")
                 pod_name = rsrc[1].split("_")[2]
-                cpu = float(rsrc[2][:-1]) / CORE_NUM
+                cpu = float(rsrc[2][:-1]) * 10#/ CORE_NUM
                 memory = float(rsrc[3][:-1])
                 blocki = to_MB(rsrc[4].split(" / ")[0])
                 blocko = to_MB(rsrc[4].split(" / ")[1])
@@ -103,7 +103,7 @@ def add_trace_to_fig(fig, pod_to_resource, col_no, last):
         row = 1
         rsrc = pod_to_resource[pod_name]
         x = rsrc["time"]
-        for rsrc_name in ["cpu", "memory", "blocki", "blocko", "inflight"]:
+        for rsrc_name in list(RESOURCE_NAME2UNIT.keys()):
             y = rsrc[rsrc_name]
             fig.append_trace(
                 go.Scatter(
@@ -126,8 +126,8 @@ testcase_no = len(pods_no)
 metric_titles = [
     "CPU Load",
     "Memory Load",
-    "Block I/O (In)",
-    "Block I/O (Out)",
+    # "Block I/O (In)",
+    # "Block I/O (Out)",
     "Inflight Request",
 ]
 metric_no = len(metric_titles)
@@ -158,23 +158,15 @@ for num, pod_no in enumerate(pods_no):
     add_trace_to_fig(fig, pod_to_resource, num + 1, (num + 1) == len(pods_no))
 
 # fig.update_layout(height=1000, width=1500, title_text=f"{TASK_NAME}", showlegend=False)
-fig.update_layout(height=1000, width=1500, title_text=f"{TASK_NAME}")
+fig.update_layout(height=1000, width=3500, title_text=f"{TASK_NAME}")
 
 
 for i in range(testcase_no):
     offset = (metric_no - 1) * testcase_no + i + 1
     fig["layout"][f"xaxis{offset}"]["title"] = "Time (second)"
-for i, unit in enumerate(
-    [
-        "CPU Load (%)",
-        "Memory Load (%)",
-        "Block In (MB)",
-        "Block out (MB)",
-        "Number of Inflight Request",
-    ]
-):
+for i, unit in enumerate(list(RESOURCE_NAME2UNIT.values())):
     offset = 1 + i * testcase_no
     fig["layout"][f"yaxis{offset}"]["title"] = unit
 
-fig.write_html(OUTPUT)
+# fig.write_html(OUTPUT)
 fig.show()
