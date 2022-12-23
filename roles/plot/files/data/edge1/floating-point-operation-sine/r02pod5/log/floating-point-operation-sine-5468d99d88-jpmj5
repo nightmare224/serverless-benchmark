@@ -1,0 +1,9 @@
+2022/12/23 09:39:17 Version: 0.2.1	SHA: cd8dc9f4e98049150d8079a74a18cd5a2e311aeb
+2022/12/23 09:39:17 Timeouts: read: 0s write: 0s hard: 0s health: 0s.
+2022/12/23 09:39:17 Listening on port: 8080
+2022/12/23 09:39:17 Writing lock-file to: /tmp/.lock
+2022/12/23 09:39:17 Metrics listening on port: 8081
+2022/12/23 09:40:09 Forking fprocess.
+2022/12/23 09:40:09 Forking fprocess.
+2022/12/23 09:40:13 Wrote 56 Bytes - Duration: 4.484518s
+2022/12/23 09:40:13 Wrote 56 Bytes - Duration: 4.654451s
