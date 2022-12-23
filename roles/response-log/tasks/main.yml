@@ -2,9 +2,10 @@
 - name: Output pod log file
   shell: |
     podname={{ appName }}
+    request_concurrent={{ request_concurrent }}
     arr=(`kubectl get pod -n openfaas-fn | sed -n "s/\(${podname}-[^ ]*\)\(.*\)/\1/gp" | tr '\n' ' '`)
     podno=`echo ${arr[@]} | wc -w`
-    filepath=result/${podname}/pod${podno}
+    filepath=result/${podname}/r${request_concurrent}pod${podno}
     mkdir -p ${filepath}
     rm -f ${filepath}/*
     for pod in ${arr[@]}; do kubectl logs -n openfaas-fn ${pod} > ${filepath}/${pod}; done
