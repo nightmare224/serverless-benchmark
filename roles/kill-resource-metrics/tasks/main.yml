@@ -14,5 +14,5 @@
 - name: Fetch resource metrics from workers
   fetch:
     src: ~/{{ appName }}-{{ ansible_user }}
-    dest: "{{ role_path }}/../plot/files/data/{{ plot_subpath }}/{{ appName }}/{{ plot_subpath }}/r{{ request_concurrent }}pod{{ pod_no }}/resource/"
+    dest: "{{ role_path }}/../plot/files/data/{{ plot_subpath }}/{{ appName }}/r{{ request_concurrent }}pod{{ pod_no }}/resource/"
     flat: true
